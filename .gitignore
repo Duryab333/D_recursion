@@ -128,8 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
+
 # project-specific files
 README_init.md
-A_setup_python/
 B_explore_python/
-Cygwin_setup.md
