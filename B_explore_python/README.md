@@ -1,4 +1,4 @@
-# Assignment B: Explore Python &nbsp; (<span style="color:red">XX Pts</span>)
+# Assignment B: Explore Python &nbsp; (<span style="color:red">20 Pts</span>)
 
 This assignment demonstrates Python's basic data structures.
 
@@ -8,15 +8,13 @@ This assignment demonstrates Python's basic data structures.
 3. [Challenge 3:](#3-challenge-3-sorting-fruits) Sorting Fruits
 4. [Challenge 4:](#4-challenge-4-income-analysis) Income Analysis
 5. [Challenge 5:](#5-challenge-5-code-income-analysis) Code Income Analysis
-6. [Challenge 6:](#6-challenge-6-python-built-in-functions)
-    Python built-in functions
+6. [Challenge 6:](#6-challenge-6-explore-python-built-in-functions)
+    Explore Python built-in functions
 
 &nbsp;
 ### 1.) Challenge 1: Indexing Fruits
 Explore Python. Review Python's basic
 [data structures](https://www.dataquest.io/blog/data-structures-in-python).
-
-Answer questions on a piece of paper.
 
 ```py
 # Python is known for advanced list processing.
@@ -40,17 +38,21 @@ the last fruit is: banana
 >>> print(f"the last two fruits are: {fruits[-2:]}")
 the last two fruits are: ['orange', 'banana']
 ```
+Perform examples on your laptop. (1 Pt)
 
 
 &nbsp;
 ### 2.) Challenge 2: Packaging Fruits
 
 Review Python's built-in
-[data structures](https://www.dataquest.io/blog/data-structures-in-python)
-and answer questions on a piece of paper.
+[data structures](https://www.dataquest.io/blog/data-structures-in-python).
+Perform examples and answer questions on a piece of paper.
 
-1. What are the differences between `fruits`, `fruitbag` and
-  `fruitbox`?
+1. What are data types for `fruits`, `fruitbag` and `fruitbox` called? (1 Pt)
+
+1. Name three properties that characterize each data type. (1 Pts)
+
+1. Why does output for `fruitbag` differ from input? (1 Pt)
 
     ```py
     >>> fruits = ['apple', 'pear', 'orange', 'banana']
@@ -75,7 +77,8 @@ and answer questions on a piece of paper.
     >>>
     ```
 
-1. How is the structure for Eric called?
+
+1. How is the structure for Eric called? (1 Pt)
 
     ```py
     eric = {"name": "Eric", "salary": 5000, "birthday": "Sep 25 2001"}
@@ -110,9 +113,8 @@ and answer questions on a piece of paper.
 1. Some people say that Arrays in other languages are
 Lists in Python. Other people argue that Tuples are Arrays.
    - a) Which statement is (more) correct? (1 Pt)
-   - c) Why? (1 Pt)
-   - b) Name three differences between Arrays and Lists?
-        (3 Pt)
+   - b) Name two differences between Arrays and Lists?
+        (1 Pt)
 
 1. Draw sketches to visualize Python data structures:
 *List*, *Set*, *Tuple*, *Dictionary* and *Array* (from other
@@ -155,15 +157,14 @@ highest bracket.
 Answer questions:
 
 1. What is the difference between *mean (average)* and
-*median* calculations?  (1 Pt)
-
-1. Why are both indicators relevant? (1 Pt)
+*median* calculations? (1 Pt)
+    - Why are both indicators relevant?
 
 1. Calculate manually the *average* income for Madera
-    county.
+    county. (1 Pt)
 
 1. Calculate manually the *median* income for Madera
-    county.
+    county. (1 Pt)
 
 
 &nbsp;
@@ -175,31 +176,36 @@ Write Python code to perform this income analysis.
 
 Think about following steps:
 
-1. Chose a suitable Python structure to represent tax data for a ZIP code.
+1. Chose a suitable Python structure to represent tax data for a ZIP code. (1 Pt)
     - Which data is relevant for the analysis?
     - How can data be structured?
     - Use only use Python structures: *list*, *set*, *tuple*, *dictionary*. 
 
-1. Code data for one ZIP code into your structure (no need to read `.xlsx`-files).
+1. Code data for one ZIP code into your structure
+    (no need to read `.xlsx`-files). (1 Pt)
 
 1. Define two functions `mean_income(...)` and `median_income(...)` that take
     data for one ZIP code as input and return respective numbers.
 
 1. Define function `number_of_returns(...)`.
 
-1. Implement functions and demonstrate they return correct values.
+1. Implement functions and demonstrate they return correct values. (4 Pts)
 
 1. Demonstrate analysis for other ZIP codes:
     - [94040](https://simplemaps.com/us-zips/94040) (Mountain View, CA),
     - [94304](https://simplemaps.com/us-zips/94304) (Palo Alto, CA),
     - [94027](https://simplemaps.com/us-zips/94027) (Atherton, CA),
     - [50860](https://simplemaps.com/us-zips/93636) (Redding, IA) and
-    - [10023](https://simplemaps.com/us-zips/10023) (New York City, NY Upper West side).
+    - [10023](https://simplemaps.com/us-zips/10023) (New York City, NY Upper West side). (1 Pt)
 
 
 &nbsp;
-### 6.) Challenge 6: Python built-in functions
-Learn about Python's [built-in functions](https://docs.python.org/3/library/functions.html). Test the [*globals()*](https://docs.python.org/3/library/functions.html#globals) function.
+### 6.) Challenge 6: Explore Python built-in functions
+Learn about Python's
+[built-in functions](https://docs.python.org/3/library/functions.html).
+Test the
+[*globals()*](https://docs.python.org/3/library/functions.html#globals)
+function.
 ```py
   >>> globals()
   {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_
@@ -214,4 +220,4 @@ Test the [*input()*](https://docs.python.org/3/library/functions.html#input) fun
   "Monty Python's Flying Circus"
   exit()
 ```
-(2 Pts)
+(1 Pt)
