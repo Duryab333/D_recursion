@@ -1,4 +1,4 @@
-# Assignment A: Setup Python &nbsp; (<span style="color:red">12 Pts</span>)
+# Assignment A: Setup Python &nbsp; (<span style="color:red">10 Pts</span>)
 
 This assignment will setup your base Python enviroment. If you already have it, simply run challenges and answer questions (if any). If you cannot run challenges, set up the needed software.
 
@@ -8,8 +8,6 @@ This assignment will setup your base Python enviroment. If you already have it, 
 2. [Challenge 2:](#2-challenge-2-python3) Python3
 3. [Challenge 3:](#3-challenge-3-pip) pip
 4. [Challenge 4:](#4-challenge-4-test-python) Test Python
-5. [Challenge 5:](#5-challenge-5-python-built-in-functions)
-    Python built-in functions
 
 
 &nbsp;
@@ -125,25 +123,5 @@ Python version: 10.0.19045
 Python machine: AMD64
 Python system:  Windows
 Python version: 3.12.0
-```
-(2 Pts)
-
-
-&nbsp;
-### 5.) Challenge 5: Python built-in functions
-Learn about Python's [built-in functions](https://docs.python.org/3/library/functions.html). Test the [*globals()*](https://docs.python.org/3/library/functions.html#globals) function.
-```py
-  >>> globals()
-  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_
-  importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module
-  'builtins' (built-in)>, 'fruits': ['apple', 'pear', 'orange', 'banana']}
-```
-Test the [*input()*](https://docs.python.org/3/library/functions.html#input) function.
-```py
-  >>> s = input('--> ')
-  --> Monty Python's Flying Circus
-  >>> s
-  "Monty Python's Flying Circus"
-  exit()
 ```
 (2 Pts)
