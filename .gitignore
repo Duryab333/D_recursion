@@ -129,7 +129,5 @@ dmypy.json
 .pyre/
 
 
-
 # project-specific files
 README_init.md
-B_explore_python/
