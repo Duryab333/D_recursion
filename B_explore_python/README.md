@@ -129,21 +129,22 @@ publishes income statistics by ZIP codes
 
 For example, California ZIP Code
 [93636](https://simplemaps.com/us-zips/93636)
-is a rural agricultural county of Madera, north of
+is for Madera county, an agricultural region north of
 Fresno in the Central Valley.
 Income distribution for the tax year 2020 was:
 ```
 income bracket:         number of tax returns
                         filed in bracket
-[$1 to under $25,000]             1,800
-[$25,000 to under $50,000]        1,380
-[$50,000 to under $75,000]          980
-[$75,000 to under $100,000]         830
-[$100,000 to under $200,000]      1,660
-[$200,000 or more < $50M>]          550
+[$1 to under $25,000]            1,800
+[$25,000 to under $50,000]       1,380
+[$50,000 to under $75,000]         980
+[$75,000 to under $100,000]        830
+[$100,000 to under $200,000]     1,660
+[$200,000 or more, up to $10M]     550
 ```
 Numbers mean that 980 tax returns were filed in the
-bracket [$50,000 to under $75,000] taxable income.
+bracket [$50,000 to under $75,000] taxable income,
+which is [50,000 .. 74,999].
 
 A common statistical analysis is to compute:
 
@@ -151,8 +152,14 @@ A common statistical analysis is to compute:
 
 - the *median income* per tax filer.
 
-Assume $50 million as upper limit for *"more"* in the
-highest bracket.
+Assume $10 million ($10M) as upper limit for *"or more"* in
+the highest bracket.
+
+For calculating the *mean income*, use the mean income
+within each bracket.
+
+For calculating the *median income*, consider a linear rising
+income from the lower bound to the upper bound in each bracket.
 
 Answer questions:
 
@@ -160,11 +167,11 @@ Answer questions:
 *median* calculations? (1 Pt)
     - Why are both indicators relevant?
 
-1. Calculate manually the *average* income for Madera
-    county. (1 Pt)
+1. Calculate manually the *average* income for Madera county.
+(1 Pt)
 
-1. Calculate manually the *median* income for Madera
-    county. (1 Pt)
+1. Calculate manually the *median* income for Madera county.
+(1 Pt)
 
 
 &nbsp;
@@ -172,7 +179,8 @@ Answer questions:
 
 Write Python code to perform this income analysis.
 
-<b>Use pure Python</b> (no *Pandas* nor *Numpy*) for this simple example.
+<b>Use pure Python</b>, no libraries such as *Pandas* or *Numpy* or
+library functions for *mean* and *median*.
 
 Think about following steps:
 
@@ -189,15 +197,24 @@ Think about following steps:
 
 1. Define function `number_of_returns(...)`.
 
-1. Implement functions and demonstrate they return correct values. (4 Pts)
+1. Implement functions and demonstrate they return correct values.
 
 1. Demonstrate analysis for other ZIP codes:
     - [94040](https://simplemaps.com/us-zips/94040) (Mountain View, CA),
     - [94304](https://simplemaps.com/us-zips/94304) (Palo Alto, CA),
     - [94027](https://simplemaps.com/us-zips/94027) (Atherton, CA),
-    - [50860](https://simplemaps.com/us-zips/93636) (Redding, IA) and
+    - [50860](https://simplemaps.com/us-zips/50860) (Redding, IA) and
     - [10023](https://simplemaps.com/us-zips/10023) (New York City, NY Upper West side). (1 Pt)
 
+Results:
+```
+mean_income in Mountain View, CA          is:  1,740,371 - median_income is:  114,820
+mean_income in Palo Alto, CA              is:  2,077,038 - median_income is:  153,658
+mean_income in Atherton, CA               is:  2,623,881 - median_income is:  354,087
+mean_income in Redding, IA                is:     33,333 - median_income is:   31,249
+mean_income in New York City, NY U West   is:  1,544,990 - median_income is:  104,774
+```
+(4 Pts)
 
 &nbsp;
 ### 6.) Challenge 6: Explore Python built-in functions
