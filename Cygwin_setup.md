@@ -76,13 +76,13 @@ Good introductions to *bash* are:
       HOME-directory `C:\Users\<user_name>`.
 
     - Edit file `/etc/nsswitch.conf`:
-        - to use Windows HOME-directory, comment line
+        - to use the Windows HOME-directory, comment line
             ```
             #db_home:
             ```
-        - for using a new directory as HOME-directory, enter
-            ```
-            db_home: /cygdrive/c/<path>
+        - for using a different directory as HOME-directory, enter
+            ```sh
+            db_home: /c/<path>      # e.g. db_home: /c/users/svgr
             ```
 
 
@@ -145,10 +145,12 @@ specifys a set of directories where executable programs are
 located. A *"command not found"* error occurs when PATH is
 not properly configured.
 
-1. Open `.bashrc` using an editor, e.g. *vim* and append PATH
-    configurations.
+1. Open `.bashrc` using an editor such as
+    *[sublime](https://www.sublimetext.com)* or
+    *[vim](https://www.vim.org)* (select in *cygwin* setup)
+    and append lines for PATH configurations.
     ```sh
-    $ vim .bashrc   # open .bashrc in vim editor
+    $ vim .bashrc       # open file .bashrc in vim editor
     ```
 
 1. Append PATH configurations at the end of the file - only
@@ -160,16 +162,16 @@ not properly configured.
     export PATH=".:/usr/bin:/usr/local/bin"
     export PATH="${PATH}:$(cygpath ${SYSTEMROOT}):$(cygpath ${SYSTEMROOT})/system32"
 
-    # add Java path
+    # if Java, add Java path
     export JAVA_HOME="/c/Program Files/Java/jdk-21"
     export PATH="${PATH}:${JAVA_HOME}/bin"
 
-    # add Python path
+    # if Python, add Python path
     export PYTHON_HOME="/c/Users/svgr2/AppData/Local/Programs/Python/Python312"
     export PATH="${PATH}:${PYTHON_HOME}"
     export PATH="${PATH}:${PYTHON_HOME}/Scripts"
 
-    # add Docker path
+    # if Docker, add Docker path
     export DOCKER_HOME="/c/Program Files/Docker/Docker"
     export PATH="${PATH}:${DOCKER_HOME}/resources/bin"
     ...
@@ -177,11 +179,11 @@ not properly configured.
 
 1. Verify paths have been added to *PATH* variable:
     ```sh
-    $ source .bashrc    # reload .bashrc to activate chances
-    $ echo $PATH                    # show PATH
+    $ source .bashrc    # reload .bashrc to activate PATH definitions
+    $ echo ${PATH}                      # show PATH
     .:/usr/bin:/usr/local/bin:/c/WINDOWS:/c/WINDOWS/system32:/c/Program ...
 
-    $ echo $PATH | tr ':' '\n'      # pretty print PATH
+    $ echo ${$PATH} | tr ':' '\n'       # pretty print PATH
     .
     /usr/bin
     /usr/local/bin
