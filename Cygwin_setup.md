@@ -3,10 +3,10 @@
 [Cygwin](https://www.cygwin.com) is a Unix-Emulator that provides
 a terminal in which Unix commands can be executed on Windows 
 using
-[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
-(*Bourne Again Shell*) as command-line interpreter -
+*[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))*
+(*Bourne Again Shell*) as command-line interpreter.
 *bash* was developed in 1989 as a successor to the
-*Bourne Shell:*
+*Bourne Shell*
 *[sh](https://en.wikipedia.org/wiki/Bourne_shell)*.
 
 
@@ -14,15 +14,15 @@ using
 
 
 *Cygwin* is <span style="text-decoration:underline">not</span>
-a Unix container or virtual machine system (unlike
+a Unix container or a virtual machine (like
 [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
-*Cygwin* emulates most (not all) Unix system calls such that
-most Unix commands can execute on Windows.
+*Cygwin* emulates most (but not all) Unix system calls such that
+most Unix commands execute on Windows.
 
-Alternatives to *Cygwin* such as
-[GitBash]()
-can be used, but have some flaws and drawbacks on Windows
-(*GitBash*, for example, performs strange path conversions, see
+An alternatives to *Cygwin* is
+[GitBash](https://gitforwindows.org),
+but is has few flaws on Windows (for example, it performs strange
+path conversions, see
 [link](https://stackoverflow.com/questions/54258996/git-bash-string-parameter-with-at-start-is-being-expanded-to-a-file-path)).
 
 Good introductions to *bash* are:
@@ -36,7 +36,7 @@ Good introductions to *bash* are:
 &nbsp;
 ## Steps
 1. [Installation](#1-installation)
-2. [Configure paths in .bashrc](#2-configure-paths-in-bashrc)
+2. [Configure *bash* (C-drive, HOME-dir, PATH)](#2-configure-bash)
 
 
 &nbsp;
@@ -56,7 +56,7 @@ Good introductions to *bash* are:
 
 1. Change *cygwin* default path `/cygdrive/c` to: `/c`:
 
-    - navigate to the *cygwin* installation directory.
+    - navigate to the *cygwin* installation directory called `cygwin64`.
 
     - inside, edit `/etc/fstab` and replace line
         ```
@@ -71,22 +71,34 @@ Good introductions to *bash* are:
 
     - Find out your Windows user name: <user_name>
 
-    - Create or select a directory that you want to use as
-      HOME-directory for *bash*, e.g. your Windows
-      HOME-directory `C:\Users\<user_name>`.
+    - Create or select a directory to use as HOME-directory for
+      *bash*, e.g. your Windows HOME-directory `C:\Users\<user_name>`
+      (but also any other directory you may create as HOME).
 
     - Edit file `/etc/nsswitch.conf`:
-        - to use the Windows HOME-directory, comment line
+        - to use your Windows HOME-directory, comment line (put hash # in front)
             ```
             #db_home:
             ```
-        - for using a different directory as HOME-directory, enter
+        - to use a different HOME directory `<path>`, enter
             ```sh
             db_home: /c/<path>      # e.g. db_home: /c/users/svgr
             ```
 
 
-1. Open a new *bash* terminal and test changes:
+1. Create a terminal icon on your Desktop.
+
+    - In the installation directory (`cygwin64`), navigate to `./bin`
+        and find file
+        [mintty.exe](https://en.wikipedia.org/wiki/Mintty),
+        which is the terminal emulator executable.
+
+    - Create a shortcut for *mintty.exe*
+        (right-click file -> Create Shortcut -> On Desktop).
+        The terminal icon appears on your desktop.
+
+
+1. Open *mintty* terminal and test:
 
     ```sh
     $ whoami
@@ -124,7 +136,11 @@ Good introductions to *bash* are:
 
 1. Return to *bash* terminal:
     - change to HOME-directory and
-    - open file `.bashrc`
+    - show content of file `.bashrc` using a text editor (
+        *[vim](https://www.vim.org)* (already installed with cygwin),
+        *[sublime](https://www.sublimetext.com)*
+        are good choices
+    )
         ```sh
         $ cd            # change to bash HOME-directory
         $ ls -la        # find file .bashrc
@@ -132,12 +148,12 @@ Good introductions to *bash* are:
         -rwxr-xr-x+ 1 svgr2 Kein   2717 Oct  4 20:28 .bashrc
 
         $ cat .bashrc   # output file .bashrc
-        ...
+        content of file .bashrc appears...
         ```
 
 
 &nbsp;
-## 2. Configure paths in `.bashrc`
+## 2. Configure bash
 
 [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) is an
 environment variable on Unix-like operating systems that
@@ -145,26 +161,53 @@ specifys a set of directories where executable programs are
 located. A *"command not found"* error occurs when PATH is
 not properly configured.
 
-1. Open `.bashrc` using an editor such as
-    *[sublime](https://www.sublimetext.com)* or
-    *[vim](https://www.vim.org)* (select in *cygwin* setup)
-    and append lines for PATH configurations.
+
+1. Inspect the current PATH variable on your system:
+    ```sh
+    echo $PATH
+    .:/usr/bin:/usr/local/bin:/c/WINDOWS:/c/WINDOWS/system32: ...
+    ```
+    PATH has a list of directory paths starting from the root directory '/'
+    separated by colon ( : ).
+
+    To print PATH more readable, replace ( : ) by newlines:
+    ```sh
+    echo $PATH | tr ':' '\n'
+    .
+    /usr/bin
+    /usr/local/bin
+    /c/WINDOWS
+    /c/WINDOWS/system32
+    ...
+    ```
+    Make sure these paths are included in PATH.
+
+
+1. Open `.bashrc` using a text editor
+    (*[sublime](https://www.sublimetext.com)* or
+    *[vim](https://www.vim.org)* - already installed with
+    *cygwin* - are good choices).
+    Append lines for PATH configurations at the end.
     ```sh
     $ vim .bashrc       # open file .bashrc in vim editor
     ```
+    or drag file from file explorer into sublime for editing.
 
-1. Append PATH configurations at the end of the file - only
-    those relevant on your system - and djust paths for your
-    system:
+
+1. Append following PATH configurations at the end of the file -
+    only those relevant on your system adjusted for your system:
 
     ```sh
     # add Windows system paths
     export PATH=".:/usr/bin:/usr/local/bin"
     export PATH="${PATH}:$(cygpath ${SYSTEMROOT}):$(cygpath ${SYSTEMROOT})/system32"
 
-    # if Java, add Java path
+    # if Java, add Java path (as first entry on PATH)
+    # make sure the path to Java exists on your system and is the path
+    # to a JDK (Java Development Kit) and not JRE, which is just the
+    # Java Runtime that has no compiler, no javadoc or jar.
     export JAVA_HOME="/c/Program Files/Java/jdk-21"
-    export PATH="${PATH}:${JAVA_HOME}/bin"
+    export PATH="${JAVA_HOME}/bin:${PATH}"
 
     # if Python, add Python path
     export PYTHON_HOME="/c/Users/svgr2/AppData/Local/Programs/Python/Python312"
@@ -177,6 +220,7 @@ not properly configured.
     ...
     ```
 
+
 1. Verify paths have been added to *PATH* variable:
     ```sh
     $ source .bashrc    # reload .bashrc to activate PATH definitions
@@ -185,20 +229,12 @@ not properly configured.
 
     $ echo ${$PATH} | tr ':' '\n'       # pretty print PATH
     .
+    /c/Program Files/Java/jdk-21/bin    <-- path to JDK executables
     /usr/bin
     /usr/local/bin
     /c/WINDOWS
     /c/WINDOWS/system32
-    /c/Program Files/Java/jdk-21/bin
-    /c/opt/maven/bin
-    /c/Users/svgr2/AppData/Local/Programs/Python/Python312
-    /c/Users/svgr2/AppData/Local/Programs/Python/Python312/Scripts
-    /c/Program Files/Docker/Docker/resources/bin
-    /c/Program Files/MySQL/MySQL Workbench 8.0 CE
-    /c/Program Files (x86)/Git/bin
-    /c/Program Files/Oracle/VirtualBox
-    /c/opt/Qt6/Tools/mingw1120_64/bin
-    /c/opt/Qt6/6.2.4/mingw_64/bin
+    ...
     ```
     Paths may vary based on your system.
 
