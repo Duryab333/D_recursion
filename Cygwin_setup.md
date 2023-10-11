@@ -35,12 +35,17 @@ Good introductions to *bash* are:
 
 &nbsp;
 ## Steps
-1. [Installation](#1-installation)
-2. [Configure *bash* (C-drive, HOME-dir, PATH)](#2-configure-bash)
+1. [Install *Cygwin*](#1-install-cygwin)
+2. [Configure *Cygwin* and *bash*](#2-configure-cygwin)
+    - /c/ drive
+    - define HOME-directory
+    - file in HOME-directory: *.bashrc*
+    - define PATH environment variable in *.bashrc*
+3. [Customize *bash*](#3-customize-bash)
 
 
 &nbsp;
-## 1. Installation
+## 1. Install Cygwin
 
 1. Download the installer `setup-x86_64.exe` from
 [https://www.cygwin.com/install.html](https://www.cygwin.com/install.html).
@@ -136,11 +141,11 @@ Good introductions to *bash* are:
 
 1. Return to *bash* terminal:
     - change to HOME-directory and
-    - show content of file `.bashrc` using a text editor (
+    - show content of file `.bashrc` using a text editor:
         *[vim](https://www.vim.org)* (already installed with cygwin),
+        *[nano](https://www.nano-editor.org)* or
         *[sublime](https://www.sublimetext.com)*
-        are good choices
-    )
+        are good choices.
         ```sh
         $ cd            # change to bash HOME-directory
         $ ls -la        # find file .bashrc
@@ -153,7 +158,7 @@ Good introductions to *bash* are:
 
 
 &nbsp;
-## 2. Configure bash
+## 2. Configure *Cygwin*
 
 [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) is an
 environment variable on Unix-like operating systems that
@@ -253,3 +258,18 @@ not properly configured.
     $ docker --version
     Docker version 24.0.6, build ed223bc
     ```
+
+
+&nbsp;
+## 3. Customize *bash*
+
+*bash* is widely customizable, usually by settings in *.bashrc*.
+
+- [Bash Prompt customization](https://wiki.archlinux.org/title/Bash/Prompt_customization)
+
+- [How to Change Colors on LS in Bash](https://linuxhint.com/ls_colors_bash)
+
+- [How to Customize and Colorize the Bash Prompt](https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/)
+
+Skip, when no customization is desired.
+
