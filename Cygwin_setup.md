@@ -31,10 +31,9 @@ for more detail about the differences between *Cygwin* and *MinGW / GitBash*.
 
 Good introductions to *bash* are:
 
-- [https://cs.lmu.edu/~ray/notes/bash](https://cs.lmu.edu/~ray/notes/bash).
+- [Introduction to Bash](https://cs.lmu.edu/~ray/notes/bash).
 
-- Also recommended is the 
-[Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
+- [Bash Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
 
 &nbsp;
@@ -288,10 +287,10 @@ Skip when no customization is desired.
 - [What is PATH?](https://en.wikipedia.org/wiki/PATH_(variable))
 
 - Bash tutorials:
-    - [https://cs.lmu.edu/~ray/notes/bash](https://cs.lmu.edu/~ray/notes/bash).
+    - [Introduction to Bash](https://cs.lmu.edu/~ray/notes/bash).
     - [Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
 - [Differences between Cygwin and MinGW](https://stackoverflow.com/questions/771756/what-is-the-difference-between-cygwin-and-mingw)
 
-- [Change Cygwin home folder after installation](https://stackoverflow.com/questions/1494658/how-can-i-change-my-cygwin-home-folder-after-installation).
+- [Change Cygwin HOME directory after installation](https://stackoverflow.com/questions/1494658/how-can-i-change-my-cygwin-home-folder-after-installation).
 
