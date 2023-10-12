@@ -1,29 +1,33 @@
 # Cygwin setup on *Windows*
 
 [Cygwin](https://www.cygwin.com) is a Unix-Emulator that provides
-a terminal in which Unix commands can be executed on Windows 
-using
+a terminal ([mintty](https://mintty.en.lo4d.com/windows))
+in which Unix commands can be executed on Windows using
 *[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))*
 (*Bourne Again Shell*) as command-line interpreter.
 *bash* was developed in 1989 as a successor to the
 *Bourne Shell*
 *[sh](https://en.wikipedia.org/wiki/Bourne_shell)*.
 
-
-[<bash terminal>](https://cdn.ttgtmedia.com/rms/onlineimages/REF_bash_command_line_3.jpg)
-
+Example of a
+[bash terminal](https://cdn.ttgtmedia.com/rms/onlineimages/REF_bash_command_line_3.jpg).
 
 *Cygwin* is <span style="text-decoration:underline">not</span>
-a Unix container or a virtual machine (like
+a Unix system, container or virtual machine (like
 [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
 *Cygwin* emulates most (but not all) Unix system calls such that
-most Unix commands execute on Windows.
+most Unix commands can be used on Windows.
 
-An alternatives to *Cygwin* is
-[GitBash](https://gitforwindows.org),
-but is has few flaws on Windows (for example, it performs strange
-path conversions, see
-[link](https://stackoverflow.com/questions/54258996/git-bash-string-parameter-with-at-start-is-being-expanded-to-a-file-path)).
+[GitBash](https://gitforwindows.org)
+is an alternative to *Cygwin* that uses a different emulator package
+[MinGW](https://www.mingw-w64.org).
+It has has some flaws, for example, it performs path conversions that
+may cause problems, see
+[link](https://stackoverflow.com/questions/54258996/git-bash-string-parameter-with-at-start-is-being-expanded-to-a-file-path).
+
+Read
+[Differences between Cygwin and MinGW](https://stackoverflow.com/questions/771756/what-is-the-difference-between-cygwin-and-mingw)
+for more detail about the differences between *Cygwin* and *MinGW / GitBash*.
 
 Good introductions to *bash* are:
 
@@ -37,11 +41,12 @@ Good introductions to *bash* are:
 ## Steps
 1. [Install *Cygwin*](#1-install-cygwin)
 2. [Configure *Cygwin* and *bash*](#2-configure-cygwin)
-    - /c/ drive
-    - define HOME-directory
-    - file in HOME-directory: *.bashrc*
-    - define PATH environment variable in *.bashrc*
+    - switch from `/cygdrive/c` to `/c`
+    - select HOME-directory
+    - configure *.bashrc* in HOME-directory
+    - define PATH in *.bashrc*
 3. [Customize *bash*](#3-customize-bash)
+4. [References](#4-references)
 
 
 &nbsp;
@@ -79,6 +84,9 @@ Good introductions to *bash* are:
     - Create or select a directory to use as HOME-directory for
       *bash*, e.g. your Windows HOME-directory `C:\Users\<user_name>`
       (but also any other directory you may create as HOME).
+
+      Read
+      [Change Cygwin home folder after installation](https://stackoverflow.com/questions/1494658/how-can-i-change-my-cygwin-home-folder-after-installation).
 
     - Edit file `/etc/nsswitch.conf`:
         - to use your Windows HOME-directory, comment line (put hash # in front)
@@ -271,5 +279,19 @@ not properly configured.
 
 - [How to Customize and Colorize the Bash Prompt](https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/)
 
-Skip, when no customization is desired.
+Skip when no customization is desired.
+
+
+&nbsp;
+## 4. References
+
+- [What is PATH?](https://en.wikipedia.org/wiki/PATH_(variable))
+
+- Bash tutorials:
+    - [https://cs.lmu.edu/~ray/notes/bash](https://cs.lmu.edu/~ray/notes/bash).
+    - [Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
+
+- [Differences between Cygwin and MinGW](https://stackoverflow.com/questions/771756/what-is-the-difference-between-cygwin-and-mingw)
+
+- [Change Cygwin home folder after installation](https://stackoverflow.com/questions/1494658/how-can-i-change-my-cygwin-home-folder-after-installation).
 
