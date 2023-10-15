@@ -2,11 +2,8 @@
     "code-runner.clearPreviousOutput": true,
     "python.testing.unittestArgs": [
         "-v",
-        "-s",
-        "./C_expressions_py",
-        "./D_functions_and_streams",
-        "-p",
-        "*_test.py"
+        "-s", "./C_numbers",
+        "-p", "test_*.py"
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true
