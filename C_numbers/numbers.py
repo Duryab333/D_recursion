@@ -2,6 +2,23 @@ from __init__ import import_sol_module
 
 
 class Numbers:
+    """"
+    Class for the assignment. Fill in one-line expressions (no own functions)
+    to initialize values self.b .. self.k with specified values.
+
+    Use Python built-in functions, list expressions and list comprhension,
+    but NO own functions.
+
+    Complete tasks one after another. Once you are done with one task,
+    uncomment test case in test_numbers.py. Remove comments for
+      # TestCase_b = Test_Numbers
+      # TestCase_c = Test_Numbers
+      # TestCase_d = Test_Numbers
+      # ...
+    Run tests in IDE and in a terminal:
+      python test_numbers.py
+      python -m unittest test_numbers.py
+    """
 
     default_numbers=[4, 12, 3, 8, 17, 12, 1, 8, 7]
 
@@ -78,7 +95,7 @@ class Numbers:
 
 if __name__ == '__main__':
     '''
-    driver code that runs when this file is directly executed
+    Driver that runs when this file is directly executed.
     '''
     #
     n1 = Numbers()   # use default list
@@ -88,4 +105,3 @@ if __name__ == '__main__':
     #
     n1.print_results()
     # n2.print_results()     # try also other list
-

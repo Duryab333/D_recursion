@@ -74,8 +74,8 @@ TestCase_a = TestCase_b = TestCase_c = TestCase_d = Test_class
 TestCase_e = TestCase_f = TestCase_g = TestCase_h = Test_class
 TestCase_i = TestCase_j = TestCase_k = Test_class
 
-# uncomment tests
-TestCase_a = Test_Numbers   # test works because solution a) is given
+# uncomment tests, one after the other as you progress from b) through k)
+TestCase_a = Test_Numbers   # test a) passes, solution is given in numbers.py
 # TestCase_b = Test_Numbers
 # TestCase_c = Test_Numbers
 # TestCase_d = Test_Numbers
