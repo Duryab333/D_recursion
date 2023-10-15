@@ -1,0 +1,31 @@
+Run unit tests with discovery (-m) or from __main__() with verbosity level 2
+ - python -m unittest test_numbers.py
+ - python test_numbers.py
+
+Output with verbosity level < 2:
+================================
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+OK
+
+Output with verbosity level 2:
+==============================
+test_a_number_of_numbers (test_numbers.Test_Numbers_a_number_of_numbers.test_a_number_of_numbers) ... ok
+test_b_first_three_numbers (test_numbers.Test_Numbers_b_first_three_numbers.test_b_first_three_numbers) ... ok
+test_c_last_three_numbers (test_numbers.Test_Numbers_c_last_three_numbers.test_c_last_three_numbers) ... ok
+test_d_last_three_numbers_in_reverse (test_numbers.Test_Numbers_d_last_three_numbers_in_reverse.test_d_last_three_numbers_in_reverse) ... ok
+test_e_odd_numbers (test_numbers.Test_Numbers_e_odd_numbers.test_e_odd_numbers)... ok
+test_f_number_of_odd_numbers (test_numbers.Test_Numbers_f_number_of_odd_numbers.
+test_f_number_of_odd_numbers) ... ok
+test_g_sum_of_odd_numbers (test_numbers.Test_Numbers_g_sum_of_odd_numbers.test_g_sum_of_odd_numbers) ... ok
+test_h_duplicate_numbers_removed (test_numbers.Test_Numbers_h_duplicate_numbers_removed.test_h_duplicate_numbers_removed) ... ok
+test_i_number_of_duplicate_numbers (test_numbers.Test_Numbers_i_number_of_duplicate_numbers.test_i_number_of_duplicate_numbers) ... ok
+test_j_ascending_squared_numbers_no_duplicates (test_numbers.Test_Numbers_j_ascending_squared_numbers_no_duplicates.test_j_ascending_squared_numbers_no_duplicates) ... ok
+test_k_classify_numbers_as_odd_even_empty (test_numbers.Test_Numbers_k_classify_numbers_as_odd_even_empty.test_k_classify_numbers_as_odd_even_empty) ... ok
+----------------------------------------------------------------------
+Ran 11 tests in 0.005s
+
+OK
+<unittest.runner.TextTestResult run=11 errors=0 failures=0>
