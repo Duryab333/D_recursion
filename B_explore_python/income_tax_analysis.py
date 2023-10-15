@@ -3,8 +3,7 @@ Code for Assignment B: Explore Python
  - Challenge 4: Income Analysis
  - Challenge 5: Code Income Analysis
 
-Based on 2020 tax returns, income distribution in Madera County,
-CA, ZIP 93636 was:
+Based on 2020 tax returns, income distribution in Madera County, CA, ZIP 93636 was:
 #
 income brackets:        number of tax returns
                         filed in brackets:
