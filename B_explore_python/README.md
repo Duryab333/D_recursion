@@ -23,7 +23,7 @@ Explore Python. Review Python's basic
 >>> fruits
 ['apple', 'pear', 'orange', 'banana']
 
->>> len(fruits)
+>>> print(len(fruits))
 4
 
 >>> print(f"the third fruit is: {fruits[2]}")
