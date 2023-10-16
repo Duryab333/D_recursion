@@ -5,9 +5,9 @@ Code for Assignment B: Explore Python
  - Challenge 3: Sorting Fruits
 '''
 
-fruits = ['apple', 'pear', 'orange', 'banana']
-fruitbag = {'apple', 'pear', 'orange', 'banana'}
-fruitbox = ('apple', 'pear', 'orange', 'banana')
+fruits = ['apple', 'pear', 'orange', 'banana', 'apple']
+fruitbag = {'apple', 'pear', 'orange', 'banana', 'apple'}
+fruitbox = ('apple', 'pear', 'orange', 'banana', 'apple')
 
 
 def index_fruits():
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     Main driver that runs when this file is executed by the Python interpreter.
     '''
     index_fruits()
-    # package_fruits()
-    # sort_fruits()
+    package_fruits()
+    sort_fruits()
     # 
     # print(globals())
