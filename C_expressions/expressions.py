@@ -1,23 +1,23 @@
 from __init__ import import_sol_module
 
 
-class Numbers:
+class Expressions:
     """"
     Class for the assignment. Fill in one-line expressions (no own functions)
     to initialize values self.b .. self.k with specified values.
 
-    Use Python built-in functions, list expressions and list comprhension,
-    but NO own functions.
+    Use Python built-in functions, list expressions and list comprehension,
+    but NOT own functions.
 
     Complete tasks one after another. Once you are done with one task,
     uncomment test case in test_numbers.py. Remove comments for
-      # TestCase_b = Test_Numbers
-      # TestCase_c = Test_Numbers
-      # TestCase_d = Test_Numbers
+      # TestCase_b = Test_Expressions
+      # TestCase_c = Test_Expressions
+      # TestCase_d = Test_Expressions
       # ...
     Run tests in IDE and in a terminal:
-      python test_numbers.py
-      python -m unittest test_numbers.py
+      python test_expressions.py
+      python -m unittest test_expressions.py
     """
 
     default_numbers=[4, 12, 3, 8, 17, 12, 1, 8, 7]
@@ -98,9 +98,9 @@ if __name__ == '__main__':
     Driver that runs when this file is directly executed.
     '''
     #
-    n1 = Numbers()   # use default list
+    n1 = Expressions()   # use default list
     #
-    n2 = Numbers([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67,
+    n2 = Expressions([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67,
         6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
     #
     n1.print_results()

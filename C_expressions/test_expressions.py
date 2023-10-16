@@ -12,9 +12,9 @@ OK
 <unittest.runner.TextTestResult run=11 errors=0 failures=0>
 """
 import unittest
-from numbers import Numbers
-from numbers import __file__ as numbers__file__
-from __init__ import PACKAGE_DIR, PROJECT_DIR, import_sol_module
+from expressions import Expressions
+from expressions import __file__ as numbers__file__
+from __init__ import PACKAGE_DIR, PROJECT_PATH, import_sol_module
 
 
 class TestCase_test_data:
@@ -23,17 +23,17 @@ class TestCase_test_data:
     """
     # objects "under test" or "tested objects" are instances
     # of class Numbers initialized with varying lists
-    ut1 = Numbers(Numbers.default_numbers)  # [4, 12, 3, 8, 17, 12, 1, 8, 7]
-    ut2 = Numbers([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67, 6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
-    ut3 = Numbers([6, 67, 6, 8, 17, 3, 6, 8])
-    ut4 = Numbers([8, 3, 9])
-    ut5 = Numbers([1, 1, 1])
-    ut6 = Numbers([0, 0])
-    ut7 = Numbers([0])
-    ut8 = Numbers([])
+    ut1 = Expressions(Expressions.default_numbers)  # [4, 12, 3, 8, 17, 12, 1, 8, 7]
+    ut2 = Expressions([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67, 6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
+    ut3 = Expressions([6, 67, 6, 8, 17, 3, 6, 8])
+    ut4 = Expressions([8, 3, 9])
+    ut5 = Expressions([1, 1, 1])
+    ut6 = Expressions([0, 0])
+    ut7 = Expressions([0])
+    ut8 = Expressions([])
 
 
-class Test_Numbers(unittest.TestCase):
+class Test_Expressions(unittest.TestCase):
     """
     Top-level class that inherits from class unittest.TestCase
     and injects test data into derived test classes.
@@ -63,7 +63,7 @@ class Disabled_test:
 try:
     mod = import_sol_module(numbers__file__)
     verbosity_level = 1
-    Test_class = Test_Numbers
+    Test_class = Test_Expressions
 #
 except ImportError:
     verbosity_level = 2
@@ -75,17 +75,17 @@ TestCase_e = TestCase_f = TestCase_g = TestCase_h = Test_class
 TestCase_i = TestCase_j = TestCase_k = Test_class
 
 # uncomment tests, one after the other as you progress from b) through k)
-TestCase_a = Test_Numbers   # test a) passes, solution is given in numbers.py
-# TestCase_b = Test_Numbers
-# TestCase_c = Test_Numbers
-# TestCase_d = Test_Numbers
-# TestCase_e = Test_Numbers
-# TestCase_f = Test_Numbers
-# TestCase_g = Test_Numbers
-# TestCase_h = Test_Numbers
-# TestCase_i = Test_Numbers
-# TestCase_j = Test_Numbers
-# TestCase_k = Test_Numbers
+TestCase_a = Test_Expressions   # test a) passes, solution is given in numbers.py
+TestCase_b = Test_Expressions
+TestCase_c = Test_Expressions
+TestCase_d = Test_Expressions
+TestCase_e = Test_Expressions
+TestCase_f = Test_Expressions
+TestCase_g = Test_Expressions
+TestCase_h = Test_Expressions
+TestCase_i = Test_Expressions
+TestCase_j = Test_Expressions
+TestCase_k = Test_Expressions
 
 
 
@@ -247,7 +247,7 @@ if __name__ == '__main__':
     # 
     # discover tests in this package
     test_classes = unittest.defaultTestLoader \
-        .discover(PACKAGE_DIR, pattern='test_*.py', top_level_dir=PROJECT_DIR)
+        .discover(PACKAGE_DIR, pattern='test_*.py', top_level_dir=PROJECT_PATH)
     # 
     suite = unittest.TestSuite(test_classes)
     runner = unittest.runner.TextTestRunner(verbosity=verbosity_level)

@@ -1,20 +1,21 @@
 import os
 """
-__init__.py marks a directory as a Python package. It is executed
-when the package is imported.
-It is also needed for the Python test runner to discover tests for VS Code.
+Special file __init__.py marks a directory as a Python package.
+A Python Package is a collection of Python modules with an
+__init__.py File. The file is executed when the package is imported.
+The file is also needed for VS Code test runner to discover tests.
 """
 
 
 def package_dir(file):
     """
-    Return name of this package, which is the name of its directory.
+    Return name of directory of this package.
     """
     path = os.path.normpath(file).split(os.sep)
     return path[len(path)-2]    # e.g. "C_numbers"
 
 
-def project_dir(file):
+def project_path(file):
     """
     Return path to project directory.
     """
@@ -31,5 +32,8 @@ def import_sol_module(file):
     return __import__(sol_module, globals(), locals(), [], 0)
 
 
+# name of this package directory
 PACKAGE_DIR = package_dir(__file__)
-PROJECT_DIR = project_dir(__file__)
+
+# path to project directory, in which this module resides 
+PROJECT_PATH = project_path(__file__)

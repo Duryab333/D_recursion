@@ -2,8 +2,10 @@
     "code-runner.clearPreviousOutput": true,
     "python.testing.unittestArgs": [
         "-v",
-        "-s", "./C_numbers",
-        "-p", "test_*.py"
+        "-s",
+        "./C_expressions",
+        "-p",
+        "test_*.py"
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true
