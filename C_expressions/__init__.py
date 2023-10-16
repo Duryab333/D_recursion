@@ -12,7 +12,7 @@ def package_dir(file):
     Return name of directory of this package.
     """
     path = os.path.normpath(file).split(os.sep)
-    return path[len(path)-2]    # e.g. "C_numbers"
+    return path[len(path)-2]    # e.g. "C_expressions"
 
 
 def project_path(file):

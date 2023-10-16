@@ -1,7 +1,7 @@
 """
 Run unit tests with discovery (-m) or from __main__() with verbosity level 2
- - python -m unittest test_numbers.py
- - python test_numbers.py
+ - python -m unittest test_expressions.py
+ - python test_expressions.py
 
 Output with verbosity level < 2:
 ================================
@@ -12,84 +12,77 @@ OK
 <unittest.runner.TextTestResult run=11 errors=0 failures=0>
 """
 import unittest
-from expressions import Expressions
-from expressions import __file__ as numbers__file__
+import abc                  # import Abstract Base Class (ABC) from abc
+import expressions
+from expressions import Expressions as Tested_class
 from __init__ import PACKAGE_DIR, PROJECT_PATH, import_sol_module
 
 
-class TestCase_test_data:
+class Test_data:
     """
-    Class with test data (objects under test, instances of class Numbers: ut1...)
+    Class with tested objects (objects "under test", "ut") as
+    instances of imported Tested_class
     """
-    # objects "under test" or "tested objects" are instances
-    # of class Numbers initialized with varying lists
-    ut1 = Expressions(Expressions.default_numbers)  # [4, 12, 3, 8, 17, 12, 1, 8, 7]
-    ut2 = Expressions([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67, 6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
-    ut3 = Expressions([6, 67, 6, 8, 17, 3, 6, 8])
-    ut4 = Expressions([8, 3, 9])
-    ut5 = Expressions([1, 1, 1])
-    ut6 = Expressions([0, 0])
-    ut7 = Expressions([0])
-    ut8 = Expressions([])
+    ut1 = Tested_class(Tested_class.default_numbers)  # [4, 12, 3, 8, 17, 12, 1, 8, 7]
+    ut2 = Tested_class([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67, 6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
+    ut3 = Tested_class([6, 67, 6, 8, 17, 3, 6, 8])
+    ut4 = Tested_class([8, 3, 9])
+    ut5 = Tested_class([1, 1, 1])
+    ut6 = Tested_class([0, 0])
+    ut7 = Tested_class([0])
+    ut8 = Tested_class([])
 
 
-class Test_Expressions(unittest.TestCase):
+class Test_case(unittest.TestCase):
     """
     Top-level class that inherits from class unittest.TestCase
-    and injects test data into derived test classes.
-    Sub-classes of unittest.TestCase are discovered as unit tests.
+    and injects test data into derived classes for test cases.
+    Sub-classes are discovered as unit tests.
     """
     def setUp(self):
-        # TestCase_test_data.inject_test_data_into(self)
-        td_ = TestCase_test_data
-        self.ut1 = td_.ut1
-        self.ut2 = td_.ut2
-        self.ut3 = td_.ut3
-        self.ut4 = td_.ut4
-        self.ut5 = td_.ut5
-        self.ut6 = td_.ut6
-        self.ut7 = td_.ut7
-        self.ut8 = td_.ut8
-
-
-class Disabled_test:
-    """
-    Class does not inherit from unittest.TestCase and
-    is hence ignored by test discovery.
-    """
-    pass
+        self.ut1 = Test_data.ut1
+        self.ut2 = Test_data.ut2
+        self.ut3 = Test_data.ut3
+        self.ut4 = Test_data.ut4
+        self.ut5 = Test_data.ut5
+        self.ut6 = Test_data.ut6
+        self.ut7 = Test_data.ut7
+        self.ut8 = Test_data.ut8
 
 
 try:
-    mod = import_sol_module(numbers__file__)
+    mod = import_sol_module(expressions.__file__)
     verbosity_level = 1
-    Test_class = Test_Expressions
-#
+    # activate all test cases when solution module is present
+    Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
+    Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
+    Test_case_i = Test_case_j = Test_case_k = Test_case
+# 
 except ImportError:
     verbosity_level = 2
-    Test_class = Disabled_test
-
-# initialize test cases as tests (Test_Numbers) or disabled
-TestCase_a = TestCase_b = TestCase_c = TestCase_d = Test_class
-TestCase_e = TestCase_f = TestCase_g = TestCase_h = Test_class
-TestCase_i = TestCase_j = TestCase_k = Test_class
-
-# uncomment tests, one after the other as you progress from b) through k)
-TestCase_a = Test_Expressions   # test a) passes, solution is given in numbers.py
-TestCase_b = Test_Expressions
-TestCase_c = Test_Expressions
-TestCase_d = Test_Expressions
-TestCase_e = Test_Expressions
-TestCase_f = Test_Expressions
-TestCase_g = Test_Expressions
-TestCase_h = Test_Expressions
-TestCase_i = Test_Expressions
-TestCase_j = Test_Expressions
-TestCase_k = Test_Expressions
+    # disable tests by assigning them to Python's Abstract Base Class (ABC)
+    Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
+    Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
+    Test_case_i = Test_case_j = Test_case_k = abc.ABC
 
 
+# uncomment tests one after the other as you progress with
+# expressions from b) through k)
+Test_case_a = Test_case   # test a) passes, solution is given in numbers.py
+# Test_case_b = Test_case
+# Test_case_c = Test_case
+# Test_case_d = Test_case
+# Test_case_e = Test_case
+# Test_case_f = Test_case
+# Test_case_g = Test_case
+# Test_case_h = Test_case
+# Test_case_i = Test_case
+# Test_case_j = Test_case
+# Test_case_k = Test_case
 
-class TestCase_a_number_of_numbers(TestCase_a):
+
+
+class TestCase_a_number_of_numbers(Test_case_a):
     # 
     # tests a): number of numbers tests (lengths of numbers lists)
     def test_a_number_of_numbers(self):
@@ -103,7 +96,7 @@ class TestCase_a_number_of_numbers(TestCase_a):
         self.assertEqual(self.ut8.a, 0)
 
 
-class TestCase_b_first_three_numbers(TestCase_b):
+class TestCase_b_first_three_numbers(Test_case_b):
     # 
     # tests b): first three numbers
     def test_b_first_three_numbers(self):
@@ -117,7 +110,7 @@ class TestCase_b_first_three_numbers(TestCase_b):
         self.assertEqual(self.ut8.b, [])
 
 
-class TestCase_c_last_three_numbers(TestCase_c):
+class TestCase_c_last_three_numbers(Test_case_c):
     # 
     # tests c): last three numbers
     def test_c_last_three_numbers(td):
@@ -131,7 +124,7 @@ class TestCase_c_last_three_numbers(TestCase_c):
         td.assertEqual(td.ut8.c, [])
 
 
-class TestCase_d_last_threeClass_in_reverse(TestCase_d):
+class TestCase_d_last_threeClass_in_reverse(Test_case_d):
     # 
     # tests d): last three numbers in reverse
     def test_d_last_threeClass_in_reverse(td):
@@ -145,7 +138,7 @@ class TestCase_d_last_threeClass_in_reverse(TestCase_d):
         td.assertEqual(td.ut8.d, [])
 
 
-class TestCase_e_odd_numbers(TestCase_e):
+class TestCase_e_odd_numbers(Test_case_e):
     # 
     # tests e): odd numbers
     def test_e_odd_numbers(td):
@@ -159,7 +152,7 @@ class TestCase_e_odd_numbers(TestCase_e):
         td.assertEqual(td.ut8.e, [])
 
 
-class TestCase_f_number_of_odd_numbers(TestCase_f):
+class TestCase_f_number_of_odd_numbers(Test_case_f):
     # 
     # tests f): number of odd numbers
     def test_f_number_of_odd_numbers(td):
@@ -173,7 +166,7 @@ class TestCase_f_number_of_odd_numbers(TestCase_f):
         td.assertEqual(td.ut8.f, 0)
 
 
-class TestCase_g_sum_of_odd_numbers(TestCase_g):
+class TestCase_g_sum_of_odd_numbers(Test_case_g):
     # 
     # tests g): sum of odd numbers
     def test_g_sum_of_odd_numbers(td):
@@ -187,7 +180,7 @@ class TestCase_g_sum_of_odd_numbers(TestCase_g):
         td.assertEqual(td.ut8.g, 0)
 
 
-class TestCase_h_duplicateClass_removed(TestCase_h):
+class TestCase_h_duplicateClass_removed(Test_case_h):
     # 
     # tests h): duplicate numbers removed
     def test_h_duplicateClass_removed(td):
@@ -201,7 +194,7 @@ class TestCase_h_duplicateClass_removed(TestCase_h):
         td.assertEqual(td.ut8.h, [])
 
 
-class TestCase_i_number_of_duplicate_numbers(TestCase_i):
+class TestCase_i_number_of_duplicate_numbers(Test_case_i):
     # 
     # tests i): number of duplicate numbers
     def test_i_number_of_duplicate_numbers(td):
@@ -215,7 +208,7 @@ class TestCase_i_number_of_duplicate_numbers(TestCase_i):
         td.assertEqual(td.ut8.i, 0)
 
 
-class TestCase_j_ascending_squaredClass_no_duplicates(TestCase_j):
+class TestCase_j_ascending_squaredClass_no_duplicates(Test_case_j):
     # 
     # tests j): ascending list of squared numbers with no duplicates
     def test_j_ascending_squaredClass_no_duplicates(td):
@@ -229,7 +222,7 @@ class TestCase_j_ascending_squaredClass_no_duplicates(TestCase_j):
         td.assertEqual(td.ut8.j, [])
 
 
-class TestCase_k_classifyClass_as_odd_even_empty(TestCase_k):
+class TestCase_k_classifyClass_as_odd_even_empty(Test_case_k):
     # 
     # tests k): classify as "ODD_LIST", "EVEN_LIST" or "EMPTY_LIST" depending on numbers length
     def test_k_classifyClass_as_odd_even_empty(td):

@@ -10,10 +10,10 @@ class Expressions:
     but NOT own functions.
 
     Complete tasks one after another. Once you are done with one task,
-    uncomment test case in test_numbers.py. Remove comments for
-      # TestCase_b = Test_Expressions
-      # TestCase_c = Test_Expressions
-      # TestCase_d = Test_Expressions
+    uncomment test case in test_expressions.py. Remove comments for
+      # Test_case_b = Test_case
+      # Test_case_c = Test_case
+      # Test_case_d = Test_case
       # ...
     Run tests in IDE and in a terminal:
       python test_expressions.py
