@@ -14,7 +14,7 @@ This assignment demonstrates Python's powerful (*"one-liner"*) expressions.
 ### 1.) Challenge 1: Create New Project
 Create a Python project, e.g. named `C_expressions`, and
 [pull files](https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/tree/main/C_expressions)
-from GitLab.
+from GitLab (above).
 
 Inspect files and figure out their purpose. Write 1-2 sentenses what each file means
 and purpose is:
