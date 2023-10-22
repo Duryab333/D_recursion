@@ -12,6 +12,7 @@ OK
 <unittest.runner.TextTestResult run=11 errors=0 failures=0>
 """
 import unittest
+import sys, getopt
 import abc                  # import Abstract Base Class (ABC) from abc
 import expressions
 from expressions import Expressions as Tested_class
@@ -51,9 +52,20 @@ class Test_case(unittest.TestCase):
 
 
 # disable tests by assigning Python's Abstract Base Class (ABC)
+DefaultTestClass = abc.ABC
+
+# https://www.tutorialspoint.com/python/python_command_line_arguments.htm
+argv = sys.argv[1:]
+opts, args = getopt.getopt(argv, "", ["tests="])
+for opt, arg in opts:
+    if opt=='-t':
+        print(f'-t: {arg}')
+    if opt=='--tests' and arg=="all":
+        DefaultTestClass = Test_case
+
 Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
 Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
-Test_case_i = Test_case_j = Test_case_k = abc.ABC
+Test_case_i = Test_case_j = Test_case_k = DefaultTestClass
 
 
 # uncomment tests one after another as you progress with
@@ -236,4 +248,3 @@ if __name__ == '__main__':
     runner = unittest.runner.TextTestRunner(verbosity=verbosity_level)
     result = runner.run(suite)
     print(result)
-
