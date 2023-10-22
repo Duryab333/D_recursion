@@ -1,4 +1,4 @@
-# Assignment C: Python Expressions &nbsp; (<span style="color:red">16 Pts</span>)
+# Assignment C: Python Expressions & Unit Tests &nbsp; (<span style="color:red">16 Pts</span>)
 
 This assignment demonstrates Python's powerful (*"one-liner"*) expressions.
 
