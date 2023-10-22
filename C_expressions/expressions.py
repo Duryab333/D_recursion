@@ -26,11 +26,10 @@ class Expressions:
         """
         Constructor to initialize member variables.
         """
-        # initialize numbers list
         self.numbers = _numbers
 
         # a) initialize with number of numbers: 9
-        self.a = len(self.numbers)    # <-- insert expression for a), solution is given here
+        self.a = len(self.numbers)    # <-- given solution, insert one-line expressions below
 
         # b) initialize with first three numbers: [4, 12, 3]
         self.b = []      # <-- write expression here

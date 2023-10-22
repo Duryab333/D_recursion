@@ -50,36 +50,25 @@ class Test_case(unittest.TestCase):
         self.ut8 = Test_data.ut8
 
 
-try:
-    mod = import_sol_module(expressions.__file__)
-    verbosity_level = 1
-    # activate all test cases when solution module is present
-    Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
-    Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
-    Test_case_i = Test_case_j = Test_case_k = Test_case
-# 
-except ImportError:
-    verbosity_level = 2
-    # disable tests by assigning them to Python's Abstract Base Class (ABC)
-    Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
-    Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
-    Test_case_i = Test_case_j = Test_case_k = abc.ABC
+# disable tests by assigning Python's Abstract Base Class (ABC)
+Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
+Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
+Test_case_i = Test_case_j = Test_case_k = abc.ABC
 
 
-# uncomment tests one after the other as you progress with
-# expressions from b) through k)
+# uncomment tests one after another as you progress with
+# expressions b) through k)
 Test_case_a = Test_case   # test a) passes, solution is given in numbers.py
-# Test_case_b = Test_case
-# Test_case_c = Test_case
-# Test_case_d = Test_case
-# Test_case_e = Test_case
-# Test_case_f = Test_case
-# Test_case_g = Test_case
-# Test_case_h = Test_case
-# Test_case_i = Test_case
-# Test_case_j = Test_case
-# Test_case_k = Test_case
-
+Test_case_b = Test_case
+Test_case_c = Test_case
+Test_case_d = Test_case
+Test_case_e = Test_case
+Test_case_f = Test_case
+Test_case_g = Test_case
+Test_case_h = Test_case
+Test_case_i = Test_case
+Test_case_j = Test_case
+Test_case_k = Test_case
 
 
 class TestCase_a_number_of_numbers(Test_case_a):
