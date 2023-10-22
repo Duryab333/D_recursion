@@ -1,6 +1,6 @@
 """
 Run unit tests with discovery (-m) or from __main__() with verbosity level 2
- - python -m unittest test_expressions.py
+ - python -m unittest
  - python test_expressions.py
 
 Output with verbosity level < 2:
@@ -59,16 +59,16 @@ Test_case_i = Test_case_j = Test_case_k = abc.ABC
 # uncomment tests one after another as you progress with
 # expressions b) through k)
 Test_case_a = Test_case   # test a) passes, solution is given in numbers.py
-Test_case_b = Test_case
-Test_case_c = Test_case
-Test_case_d = Test_case
-Test_case_e = Test_case
-Test_case_f = Test_case
-Test_case_g = Test_case
-Test_case_h = Test_case
-Test_case_i = Test_case
-Test_case_j = Test_case
-Test_case_k = Test_case
+# Test_case_b = Test_case
+# Test_case_c = Test_case
+# Test_case_d = Test_case
+# Test_case_e = Test_case
+# Test_case_f = Test_case
+# Test_case_g = Test_case
+# Test_case_h = Test_case
+# Test_case_i = Test_case
+# Test_case_j = Test_case
+# Test_case_k = Test_case
 
 
 class TestCase_a_number_of_numbers(Test_case_a):
@@ -231,7 +231,9 @@ if __name__ == '__main__':
     test_classes = unittest.defaultTestLoader \
         .discover(PACKAGE_DIR, pattern='test_*.py', top_level_dir=PROJECT_PATH)
     # 
+    verbosity_level = 1
     suite = unittest.TestSuite(test_classes)
     runner = unittest.runner.TextTestRunner(verbosity=verbosity_level)
     result = runner.run(suite)
     print(result)
+
