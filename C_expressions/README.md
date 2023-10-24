@@ -236,8 +236,9 @@ In order to let tests pass, write expressions in
 for variables `self.b` .. `self.k` according to specification, e.g. write an
 expression for `self.b` that extracts the first three numbers from `self.numbers`.
 
-Use <b>one-line expressions</b> only. Built-in functions are allowed, but not
-own functions.
+Use <b>one-line expressions</b> only.
+Python's [built-in functions](https://docs.python.org/3/library/functions.html)
+are allowed, but not own functions.
 
 Tests exercise expressions with various lists. Initialization with constants
 (`self.b = [4, 12, 3]`) will hence not work.
