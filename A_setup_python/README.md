@@ -1,17 +1,19 @@
-# Assignment A: Setup Python &nbsp; (<span style="color:red">10 Pts</span>)
+# Assignment A: Setup Python &nbsp; (10 Pts)
 
 This assignment will setup your base Python enviroment. If you already have it, simply run challenges and answer questions (if any). If you cannot run challenges, set up the needed software.
 
 
 ### Challenges
-1. [Challenge 1:](#1-challenge-1-terminal) Terminal
-2. [Challenge 2:](#2-challenge-2-python3) Python3
-3. [Challenge 3:](#3-challenge-3-pip) pip
-4. [Challenge 4:](#4-challenge-4-test-python) Test Python
+- [Challenge 1:](#1-challenge-terminal) Terminal
+- [Challenge 2:](#2-challenge-python3) Python3
+- [Challenge 3:](#3-challenge-pip) pip
+- [Challenge 4:](#4-challenge-test-python) Test Python
+
+Points: [4, 2, 2, 2]
 
 
 &nbsp;
-### 1.) Challenge 1: Terminal
+### 1.) Challenge: Terminal
 
 If you are using *MacOS* or *Linux*, skip steps for *Windows*.
 
@@ -56,12 +58,11 @@ Find out about
   - When is `.profile` executed?
   - When is `.bashrc` (Mac: `.zshrc`) executed?
 
-
 (4 Pts)
 
 
 &nbsp;
-### 2.) Challenge 2: Python3
+### 2.) Challenge: Python3
 Check if you have Python 3 installed on your system. Name three differences between [Python 2 and 3](https://www.guru99.com/python-2-vs-python-3.html#7). 
 
 Run commands in terminal (version 3.x.y may vary):
@@ -77,7 +78,7 @@ PATH variable in `.bashrc` (Mac: `.zshrc`).
 
 
 &nbsp;
-### 3.) Challenge 3: pip
+### 3.) Challenge: pip
 Check if you have a Python package manager installed (pip, conda, ... ). [`pip`](https://pip.pypa.io) is Python's default package manager to install additional Python packages and libraries.
 
 Follow [instructions](https://pip.pypa.io/en/stable/installing) for installation:
@@ -95,7 +96,7 @@ packages\pip (python 3.12)
 
 
 &nbsp;
-### 4.) Challenge 4: Test Python
+### 4.) Challenge: Test Python
 Start Python in the terminal and execute commands:
 ```py
 > python

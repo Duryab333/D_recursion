@@ -1,18 +1,21 @@
-# Assignment B: Explore Python &nbsp; (<span style="color:red">20 Pts</span>)
+# Assignment B: Explore Python &nbsp; (20 Pts)
 
 This assignment demonstrates Python's basic data structures.
 
 ### Challenges
-1. [Challenge 1:](#1-challenge-1-indexing-fruits) Indexing Fruits
-2. [Challenge 2:](#2-challenge-2-packaging-fruits) Packaging Fruits
-3. [Challenge 3:](#3-challenge-3-sorting-fruits) Sorting Fruits
-4. [Challenge 4:](#4-challenge-4-income-analysis) Income Analysis
-5. [Challenge 5:](#5-challenge-5-code-income-analysis) Code Income Analysis
-6. [Challenge 6:](#6-challenge-6-explore-python-built-in-functions)
+- [Challenge 1:](#1-challenge-indexing-fruits) Indexing Fruits
+- [Challenge 2:](#2-challenge-packaging-fruits) Packaging Fruits
+- [Challenge 3:](#3-challenge-sorting-fruits) Sorting Fruits
+- [Challenge 4:](#4-challenge-income-analysis) Income Analysis
+- [Challenge 5:](#5-challenge-code-income-analysis) Code Income Analysis
+- [Challenge 6:](#6-challenge-explore-python-built-in-functions)
     Explore Python built-in functions
 
+Points: [1, 7, 2, 3, 6, 1]
+
+
 &nbsp;
-### 1.) Challenge 1: Indexing Fruits
+### 1.) Challenge: Indexing Fruits
 Review Python's basic
 [data structures](https://www.dataquest.io/blog/data-structures-in-python).
 
@@ -41,11 +44,13 @@ the second-last fruit is: banana
 >>> print(f"the last three fruits are: {fruits[-3:]}")
 the last three fruits are: ['orange', 'banana', 'apple']
 ```
-Perform examples on your laptop. (1 Pt)
+Perform examples on your laptop.
+
+(1 Pt)
 
 
 &nbsp;
-### 2.) Challenge 2: Packaging Fruits
+### 2.) Challenge: Packaging Fruits
 
 Review Python's built-in
 [data structures](https://www.dataquest.io/blog/data-structures-in-python).
@@ -107,7 +112,7 @@ in Python. Other people argue that Tuples are closer to Arrays.
 
 
 &nbsp;
-### 3.) Challenge 3: Sorting Fruits
+### 3.) Challenge: Sorting Fruits
 
 ```py
 >>> fruits = ['apple', 'pear', 'orange', 'banana', 'apple']
@@ -126,11 +131,13 @@ None,
 
 What is the difference between List-function *sort()* and built-in
 function *sorted()*, see
-[link](https://www.python-engineer.com/posts/sort-vs-sorted) (2 Pts)?
+[link](https://www.python-engineer.com/posts/sort-vs-sorted)?
+
+(2 Pts)
 
 
 &nbsp;
-### 4.) Challenge 4: Income Analysis
+### 4.) Challenge: Income Analysis
 The US tax Income Revenue Service (IRS) annually 
 publishes income statistics by ZIP codes (postal codes)
 ([reports](https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2020-zip-code-data-soi)).
@@ -186,7 +193,7 @@ Answer questions:
 
 
 &nbsp;
-### 5.) Challenge 5: Code Income Analysis
+### 5.) Challenge: Code Income Analysis
 
 Write Python code to perform this income analysis for arbitray
 ZIP regions.
@@ -244,15 +251,15 @@ Results:
 mean_income in Madera County, CA          is:    453,073 - median_income is:   60,714
 mean_income in Mountain View, CA          is:  1,740,371 - median_income is:  114,820
 mean_income in Palo Alto, CA              is:  2,077,038 - median_income is:  153,658
-mean_income in Atherton, CA               is:  2,623,881 - median_income is:  354,087
-mean_income in Redding, IA                is:     33,333 - median_income is:   31,249
-mean_income in New York City, NY U West   is:  1,544,990 - median_income is:  104,774
+mean_income in Atherton, CA               is:  2,623,882 - median_income is:  354,088
+mean_income in Redding, IA                is:     33,333 - median_income is:   31,250
+mean_income in New York City, NY U West   is:  1,544,991 - median_income is:  104,775
 ```
 (4 Pts)
 
 
 &nbsp;
-### 6.) Challenge 6: Explore Python built-in functions
+### 6.) Challenge: Explore Python built-in functions
 Learn about Python's
 [built-in functions](https://docs.python.org/3/library/functions.html).
 Test the

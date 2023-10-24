@@ -45,7 +45,7 @@ def print_analysis(_zip):
     )
 
 
-# attempt to load solution module (ignore)
+# attempt to load solution module (if present - ignore)
 try:
     solution_module = 'income_tax_analysis_sol'
     mod = __import__(solution_module, globals(), locals(), [], 0)

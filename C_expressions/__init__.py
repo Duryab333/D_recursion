@@ -2,8 +2,8 @@ import os
 """
 Special file __init__.py marks a directory as a Python package.
 A Python Package is a collection of Python modules with an
-__init__.py File. The file is executed when the package is imported.
-The file is also needed for VS Code test runner to discover tests.
+__init__.py File. The file is executed once when any .py file
+from the directory is imported for the first time.
 """
 
 

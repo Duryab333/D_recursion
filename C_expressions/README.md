@@ -1,17 +1,19 @@
-# Assignment C: Python Expressions & Unit Tests &nbsp; (<span style="color:red">16 Pts</span>)
+# Assignment C: Python Expressions & Unit Tests &nbsp; (16 Pts)
 
 This assignment demonstrates Python's powerful (*"one-liner"*) expressions.
 
 ### Challenges
-1. [Challenge 1:](#1-challenge-1-create-new-project) Create New Project
-1. [Challenge 2:](#2-challenge-2-run-code) Run Code
-1. [Challenge 3:](#3-challenge-3-run-unit-tests) Run Unit Tests
-1. [Challenge 4:](#4-challenge-4-write-expressions) Write Expressions
-1. [Challenge 5:](#5-challenge-5-final-test) Final Test
+- [Challenge 1:](#1-challenge-create-new-project) Create New Project
+- [Challenge 2:](#2-challenge-run-code) Run Code
+- [Challenge 3:](#3-challenge-run-unit-tests) Run Unit Tests
+- [Challenge 4:](#4-challenge-write-expressions) Write Expressions
+- [Challenge 5:](#5-challenge-final-test) Final Test
+
+Points: [1, 2, 3, 0, 10]
 
 
 &nbsp;
-### 1.) Challenge 1: Create New Project
+### 1.) Challenge: Create New Project
 Create a Python project, e.g. named `C_expressions`, and
 [pull files](https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/tree/main/C_expressions)
 from GitLab (above).
@@ -35,7 +37,7 @@ and purpose is:
 
 
 &nbsp;
-### 2.) Challenge 2: Run Code
+### 2.) Challenge: Run Code
 Run file `expressions.py` in your IDE:
 ```
 numbers: [4, 12, 3, 8, 17, 12, 1, 8, 7]
@@ -81,7 +83,7 @@ k) length: NEITHER
 
 
 &nbsp;
-### 3.) Challenge 3: Run Unit Tests
+### 3.) Challenge: Run Unit Tests
 Unit Tests are used to *"test-a-unit"* of code in isolation. This unit can be
 a function, a file, a class, a module.
 
@@ -141,8 +143,10 @@ Output is the same as above.
 
 (1 Pt)
 
-Configure your IDE so it also runs Unit Tests. VSCode discovers unit tests under
-the test glass icon (red circled).
+Configure your IDE so it runs Unit Tests (you can use other IDE than VS Code
+that is used here as example).
+
+VSCode discovers unit tests under the test glass icon (red circled).
 
 The figure shows one unit test that has been discovered passing. Unit tests are
 structured as *"TestCase - Classes"*, which are classes that inherit from class:
@@ -225,7 +229,7 @@ Tests refer to the `self.numbers` list: `[4, 12, 3, 8, 17, 12, 1, 8, 7]`.
 
 
 &nbsp;
-### 4.) Challenge 4: Write Expressions
+### 4.) Challenge: Write Expressions
 
 In order to let tests pass, write expressions in
 [expressions.py](https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/blob/main/C_expressions/expressions.py)
@@ -256,7 +260,7 @@ Continue until all tests pass.
 
 
 &nbsp;
-### 5.) Challenge 5: Final Test
+### 5.) Challenge: Final Test
 
 Pull latest Unit-test file from GitLab and re-run tests:
 ```sh
