@@ -119,21 +119,23 @@ and each following number is the sum of the two preceding numbers.
 
 Fibonacci numbers are widely found in *nature*, *science*, *social behaviors* of
 populations and *arts*, e.g. they form the basis of the
-[Golden Ratio](https://www.adobe.com/creativecloud/design/discover/golden-ratio.html)
-in *painting* and *photography*, see also this
+[Golden Ratio](https://www.adobe.com/creativecloud/design/discover/golden-ratio.html),
+which is widely used in *painting* and *photography*, see also this
 [1:32min](https://www.youtube.com/watch?v=v6PTrc0z4w4) video.
 
-<img src="../markup/img/fibonacci.jpg" alt="drawing" width="600"/>
+<img src="../markup/img/fibonacci.jpg" alt="drawing" width="640"/>
 <!-- ![image](../markup/img/fibonacci.jpg) -->
 
-Complete functions `fib(n)` and `fig_gen(n)`.
+&nbsp;
+
+Complete functions `fib(n)` and `fib_gen(n)`.
 
 ```py
 def fib(self, _n) -> int:
     # return value of n-th Fibonacci number
     return #...
 
-def fib_seq(self, _n):
+def fib_gen(self, _n):
     # return a generator object that yields two lists, one with n and the
     # other with corresponding fib(n)
     yield #...

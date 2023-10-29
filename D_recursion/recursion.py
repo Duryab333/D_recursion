@@ -30,7 +30,7 @@ class Recursion:
         return 0
 
 
-    def fib_seq(self, _n):
+    def fib_gen(self, _n):
         """
         Return a generator object that yields two lists, one with n and the
         other with corresponding fib(n).
@@ -152,7 +152,7 @@ if __name__ == '__main__':
 
     # Challenge 2.1, fig_gen()
     if 21 in run_choices:
-        gen = n1.fib_seq(20)    # yield generator object
+        gen = n1.fib_gen(20)    # yield generator object
         n, fib = next(gen)      # trigger generator
         print(f'n:      {n}')
         print(f'fib(n): {fib}')
