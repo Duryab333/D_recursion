@@ -6,6 +6,7 @@ This repository contains the assignments for class
 - Assignment A - [Python setup](A_setup_python).
 - Assignment B - [Explore Python](B_explore_python).
 - Assignment C - [Python Expressions & Unit Tests](C_expressions).
+- Assignment D - [Recursive Problem Solving](D_recursion).
 
 
 &nbsp;
