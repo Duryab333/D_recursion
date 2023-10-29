@@ -114,13 +114,17 @@ Italian mathematician *Leonardo of Pisa*, later known as
 introduced the sequence to Western European mathematics in his 1202 book
 *[Liber Abaci](https://en.wikipedia.org/wiki/Liber_Abaci)*.
 
-![image](../markup/img/fibonacci.jpg)
+<img src="../markup/img/fibonacci.jpg" alt="drawing" width="600"/>
+<!-- ![image](../markup/img/fibonacci.jpg) -->
 
-Numbers of the *Fibonacci sequence* are defined as: *fib(0): 0*, *fib(1): 1*, *...* and each following
-number is the sum of the two preceding numbers.
+Numbers of the *Fibonacci sequence* are defined as: *fib(0): 0*, *fib(1): 1*, *...*
+and each following number is the sum of the two preceding numbers.
 
-Fibonacci numbers are found in many places in nature, social behavior and arts
-([1:32min](https://www.youtube.com/watch?v=v6PTrc0z4w4) video).
+Fibonacci numbers are widely found in *nature*, *science*, *social behaviors* (of
+populations) and *arts*, e.g. as basis of the
+[Golden Ratio](https://www.adobe.com/creativecloud/design/discover/golden-ratio.html)
+in painting and photography, see also this
+[1:32min](https://www.youtube.com/watch?v=v6PTrc0z4w4) video.
 
 Complete functions `fib(n)` and `fig_gen(n)`.
 
