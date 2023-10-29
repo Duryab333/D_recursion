@@ -37,7 +37,7 @@ for recursions.
 - [Challenge 4:](#4-challenge-powerset) Powerset
 - [Challenge 5:](#5-challenge-find-matching-pairs) Find Matching Pairs
 - [Challenge 6:](#6-challenge-combinatorial-problem-of-finding-numbers) Combinatorial Problem of Finding Numbers
-- [Challenge 7:](#7-challenge-hard-problem-finding-numbers) Hard Problem Finding Numbers
+- [Challenge 7:](#7-challenge-hard-problem-of-finding-numbers) Hard Problem of Finding Numbers
 
 Points: [2, 1, 2, 2, 2, 3, 2, +4 extra pts]
 
@@ -114,13 +114,17 @@ Italian mathematician *Leonardo of Pisa*, later known as
 introduced the sequence to Western European mathematics in his 1202 book
 *[Liber Abaci](https://en.wikipedia.org/wiki/Liber_Abaci)*.
 
-![image](../markup/img/fibonacci.jpg)
+Numbers of the *Fibonacci sequence* are defined as: *fib(0): 0*, *fib(1): 1*, *...*
+and each following number is the sum of the two preceding numbers.
 
-Numbers of the *Fibonacci sequence* are defined as: *fib(0): 0*, *fib(1): 1*, *...* and each following
-number is the sum of the two preceding numbers.
+Fibonacci numbers are widely found in *nature*, *science*, *social behaviors* of
+populations and *arts*, e.g. they form the basis of the
+[Golden Ratio](https://www.adobe.com/creativecloud/design/discover/golden-ratio.html)
+in *painting* and *photography*, see also this
+[1:32min](https://www.youtube.com/watch?v=v6PTrc0z4w4) video.
 
-Fibonacci numbers are found in many places in nature, social behavior and arts
-([1:32min](https://www.youtube.com/watch?v=v6PTrc0z4w4) video).
+<img src="../markup/img/fibonacci.jpg" alt="drawing" width="600"/>
+<!-- ![image](../markup/img/fibonacci.jpg) -->
 
 Complete functions `fib(n)` and `fig_gen(n)`.
 
@@ -424,7 +428,7 @@ Answer questions:
 
 
 &nbsp;
-### 7.) Challenge: Hard Problem Finding Numbers
+### 7.) Challenge: Hard Problem of Finding Numbers
 
 Larger data sets can no longer be solved *"brute force"* by exploring all possible
 2^n combinations.
