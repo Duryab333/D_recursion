@@ -67,17 +67,18 @@ pwd                         # print working directory
 python expressions.py       # run program
 -->
 numbers: [4, 12, 3, 8, 17, 12, 1, 8, 7]
+#
 a) number of numbers: 9
-b) first three numbers: []
-c) last three numbers: []
-d) last three numbers reverse: []
-e) odd numbers: []
-f) number of odd numbers: 0
-g) sum of odd numbers: 0
-h) duplicate numbers removed: []
-i) number of duplicate numbers: 0
-j) ascending, de-dup (n^2) numbers: []
-k) length: NEITHER
+b) first three numbers: [4, 12, 3]
+c) last three numbers: [1, 8, 7]
+d) last three numbers reverse: [7, 8, 1]
+e) odd numbers: [3, 17, 1, 7]
+f) number of odd numbers: 4
+g) sum of odd numbers: 28
+h) duplicate numbers removed: [1, 3, 4, 7, 8, 12, 17]
+i) number of duplicate numbers: 2
+j) ascending, de-dup (n^2) numbers: [1, 9, 16, 49, 64, 144, 289]
+k) length: ODD_LIST
 ```
 (1 Pt)
 

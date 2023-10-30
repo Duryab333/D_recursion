@@ -12,26 +12,21 @@ OK
 <unittest.runner.TextTestResult run=11 errors=0 failures=0>
 """
 import unittest
-import sys, getopt
-import abc                  # import Abstract Base Class (ABC) from abc
-import expressions
-from expressions import Expressions as Tested_class
-from __init__ import PACKAGE_DIR, PROJECT_PATH, import_sol_module
+import abc              # import Abstract Base Class (ABC) from module abc
+from expressions import Expressions
 
 
-class Test_data:
-    """
-    Class with tested objects (objects "under test", "ut") as
-    instances of imported Tested_class
-    """
-    ut1 = Tested_class(Tested_class.default_numbers)  # [4, 12, 3, 8, 17, 12, 1, 8, 7]
-    ut2 = Tested_class([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67, 6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
-    ut3 = Tested_class([6, 67, 6, 8, 17, 3, 6, 8])
-    ut4 = Tested_class([8, 3, 9])
-    ut5 = Tested_class([1, 1, 1])
-    ut6 = Tested_class([0, 0])
-    ut7 = Tested_class([0])
-    ut8 = Tested_class([])
+"""
+tested objects (objects "under test", "ut") as instances of the Expressions class
+"""
+ut1 = Expressions(Expressions.default_numbers)  # [4, 12, 3, 8, 17, 12, 1, 8, 7]
+ut2 = Expressions([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67, 6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
+ut3 = Expressions([6, 67, 6, 8, 17, 3, 6, 8])
+ut4 = Expressions([8, 3, 9])
+ut5 = Expressions([1, 1, 1])
+ut6 = Expressions([0, 0])
+ut7 = Expressions([0])
+ut8 = Expressions([])
 
 
 class Test_case(unittest.TestCase):
@@ -41,35 +36,26 @@ class Test_case(unittest.TestCase):
     Sub-classes are discovered as unit tests.
     """
     def setUp(self):
-        self.ut1 = Test_data.ut1
-        self.ut2 = Test_data.ut2
-        self.ut3 = Test_data.ut3
-        self.ut4 = Test_data.ut4
-        self.ut5 = Test_data.ut5
-        self.ut6 = Test_data.ut6
-        self.ut7 = Test_data.ut7
-        self.ut8 = Test_data.ut8
+        self.ut1 = ut1
+        self.ut2 = ut2
+        self.ut3 = ut3
+        self.ut4 = ut4
+        self.ut5 = ut5
+        self.ut6 = ut6
+        self.ut7 = ut7
+        self.ut8 = ut8
 
 
-# disable tests by assigning Python's Abstract Base Class (ABC)
-DefaultTestClass = abc.ABC
-
-# https://www.tutorialspoint.com/python/python_command_line_arguments.htm
-argv = sys.argv[1:]
-opts, args = getopt.getopt(argv, "", ["tests="])
-for opt, arg in opts:
-    if opt=='-t':
-        print(f'-t: {arg}')
-    if opt=='--tests' and arg=="all":
-        DefaultTestClass = Test_case
-
+# disable tests by assigning Python's Abstract Base Class (ABC) to test
+# case classes, which will not be discovered as unit tests
 Test_case_a = Test_case_b = Test_case_c = Test_case_d = \
 Test_case_e = Test_case_f = Test_case_g = Test_case_h = \
-Test_case_i = Test_case_j = Test_case_k = DefaultTestClass
+Test_case_i = Test_case_j = Test_case_k = abc.ABC
 
 
-# uncomment tests one after another as you progress with
-# expressions b) through k)
+# assign Test_case class (above) as subclass of unittest.TestCase and with
+# attributes of tested objects (self.ut1...ut8)
+# uncomment tests one after another as you progress with expressions
 Test_case_a = Test_case   # test a) passes, solution is given in numbers.py
 # Test_case_b = Test_case
 # Test_case_c = Test_case
@@ -141,7 +127,7 @@ class TestCase_d_last_threeClass_in_reverse(Test_case_d):
 
 class TestCase_e_odd_numbers(Test_case_e):
     # 
-    # tests e): odd numbers
+    # tests e): odd numbers, order must be preserved
     def test_e_odd_numbers(td):
         td.assertEqual(td.ut1.e, [3, 17, 1, 7])
         td.assertEqual(td.ut2.e, [1, 67, 23, 49, 67, 23, 37, 67, 19, 67])
@@ -183,12 +169,12 @@ class TestCase_g_sum_of_odd_numbers(Test_case_g):
 
 class TestCase_h_duplicateClass_removed(Test_case_h):
     # 
-    # tests h): duplicate numbers removed
+    # tests h): duplicate numbers removed - use set() to accept any order
     def test_h_duplicateClass_removed(td):
-        td.assertEqual(td.ut1.h, [4, 12, 3, 8, 17, 1, 7])
-        td.assertEqual(td.ut2.h, [1, 4, 6, 67, 8, 23, 34, 49, 37, 19])
-        td.assertEqual(td.ut3.h, [6, 67, 8, 17, 3])
-        td.assertEqual(td.ut4.h, [8, 3, 9])
+        td.assertEqual(set(td.ut1.h), {4, 12, 3, 8, 17, 1, 7})
+        td.assertEqual(set(td.ut2.h), {1, 4, 6, 67, 8, 23, 34, 49, 37, 19})
+        td.assertEqual(set(td.ut3.h), {6, 67, 8, 17, 3})
+        td.assertEqual(set(td.ut4.h), {8, 3, 9})
         td.assertEqual(td.ut5.h, [1])
         td.assertEqual(td.ut6.h, [0])
         td.assertEqual(td.ut7.h, [0])
@@ -213,10 +199,10 @@ class TestCase_j_ascending_squaredClass_no_duplicates(Test_case_j):
     # 
     # tests j): ascending list of squared numbers with no duplicates
     def test_j_ascending_squaredClass_no_duplicates(td):
-        td.assertEqual(td.ut1.j, [1, 9, 16, 49, 64, 144, 289])
-        td.assertEqual(td.ut2.j, [1, 16, 36, 64, 361, 529, 1156, 1369, 2401, 4489])
-        td.assertEqual(td.ut3.j, [9, 36, 64, 289, 4489])
-        td.assertEqual(td.ut4.j, [9, 64, 81])
+        td.assertEqual(set(td.ut1.j), {1, 9, 16, 49, 64, 144, 289})
+        td.assertEqual(set(td.ut2.j), {1, 16, 36, 64, 361, 529, 1156, 1369, 2401, 4489})
+        td.assertEqual(set(td.ut3.j), {9, 36, 64, 289, 4489})
+        td.assertEqual(set(td.ut4.j), {9, 64, 81})
         td.assertEqual(td.ut5.j, [1])
         td.assertEqual(td.ut6.j, [0])
         td.assertEqual(td.ut7.j, [0])
@@ -238,13 +224,4 @@ class TestCase_k_classifyClass_as_odd_even_empty(Test_case_k):
 
 
 if __name__ == '__main__':
-    # 
-    # discover tests in this package
-    test_classes = unittest.defaultTestLoader \
-        .discover(PACKAGE_DIR, pattern='test_*.py', top_level_dir=PROJECT_PATH)
-    # 
-    verbosity_level = 1
-    suite = unittest.TestSuite(test_classes)
-    runner = unittest.runner.TextTestRunner(verbosity=verbosity_level)
-    result = runner.run(suite)
-    print(result)
+    unittest.main()

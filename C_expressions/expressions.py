@@ -1,23 +1,21 @@
-from __init__ import import_sol_module
-
 
 class Expressions:
     """"
-    Class for the assignment. Fill in one-line expressions (no own functions)
-    to initialize values self.b .. self.k with specified values.
+    Fill in one-line expressions (no own functions) to initialize attributes
+    self.b .. self.k with specified values.
 
     Use Python built-in functions, list expressions and list comprehension,
     but NOT own functions.
 
     Complete tasks one after another. Once you are done with one task,
-    uncomment test case in test_expressions.py. Remove comments for
+    uncomment test cases in test_expressions.py. Remove comments for
       # Test_case_b = Test_case
       # Test_case_c = Test_case
       # Test_case_d = Test_case
       # ...
     Run tests in IDE and in a terminal:
       python test_expressions.py
-      python -m unittest test_expressions.py
+      python -m unittest
     """
 
     default_numbers=[4, 12, 3, 8, 17, 12, 1, 8, 7]
@@ -63,9 +61,9 @@ class Expressions:
 
         # attempt to load solution module (ignore)
         try:
-            mod = import_sol_module(__file__)
+            sol_module = (__file__.split("\\")[-1:])[0].split(".")[0] + "_sol"
+            mod = __import__(sol_module, globals(), locals(), [], 0)
             mod.set_solution(self)  # replace empty values with solutions
-            # print(f'solution module found: {solution_module}.py')
         #
         except ImportError:
             pass
@@ -94,11 +92,12 @@ class Expressions:
 
 if __name__ == '__main__':
     '''
-    Driver that runs when this file is directly executed.
+    Driver code that runs when this file is directly executed.
     '''
     #
-    n1 = Expressions()   # use default list
+    n1 = Expressions()  # use default list
     #
+    # 2nd object with different list
     n2 = Expressions([1, 4, 6, 67, 6, 8, 23, 8, 34, 49, 67,
         6, 8, 23, 37, 67, 6, 34, 19, 67, 6, 8])
     #
