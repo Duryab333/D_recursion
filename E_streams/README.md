@@ -8,8 +8,9 @@
 - [Challenge 4:](#4-challenge-sort-function) *sort()* function
 - [Challenge 5:](#5-challenge-pipeline-for-product-codes) Pipeline for Product Codes
 - [Challenge 6:](#6-challenge-run-unit-tests) Run Unit Tests
+- [Challenge 7:](#7-challenge-sign-off) Sign-off
 
-Points: [1, 2, 3, 3, 2, 1]
+Points: [1, 2, 3, 3, 2, 0, 1]
 
 
 &nbsp;
@@ -268,14 +269,15 @@ Pull file
 [test_stream.py](test_stream.py)
 into same directory. Run unit tests to confirm the correctness of your solution.
 ```sh
+cd E_streams                        # change to directory where stream.py and test_strean.py are
 test_url=https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/raw/main/E_streams/test_stream.py
 curl -O $(echo $test_url)           # download file with unit tests from URL
 python test_stream.py               # run tests from test file
 python -m unittest --verbose        # run unit tests with discovery
-
-curl $(echo $test_url) | python     # run tests from URL (use to demonstrate)
 ```
+
 Output:
+
 ```sh
 Ran 12 tests in 0.001s
 
@@ -295,4 +297,17 @@ Unit testing using test objects:
  - test_stream_generation()
 ---> 12/12 TESTS SUCCEEDED
 ```
+
+
+&nbsp;
+### 7.) Challenge: Sign-off
+For sign-off, copy commands into a terminal:
+
+```sh
+test_url=https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/raw/main/E_streams/test_stream.py
+
+curl $(echo $test_url) | python     # run tests from URL (use for sign-off)
+```
+
 (1 Pts)
+
