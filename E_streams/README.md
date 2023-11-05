@@ -264,12 +264,14 @@ batch 4: ['X224200-0', 'X282204-8', 'X448426-8', 'X600282-8', 'X802882-8']
 &nbsp;
 ### 6.) Challenge: Run Unit Tests
 
-Pull file [stream_test.py](stream_test.py) into same directory. Run unit tests to confirm the 
-correctness of your solution.
+Pull file
+[test_stream.py](test_stream.py)
+into same directory. Run unit tests to confirm the correctness of your solution.
 ```sh
-test_url=https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/blob/main/E_streams/stream_test.py
-curl -O $(echo $test_url)           # download stream_test.py from URL
-python stream_test.py               # run tests from test file
+test_url=https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/raw/main/E_streams/test_stream.py
+curl -O $(echo $test_url)           # download file with unit tests from URL
+python test_stream.py               # run tests from test file
+python -m unittest --verbose        # run unit tests with discovery
 
 curl $(echo $test_url) | python     # run tests from URL (use to demonstrate)
 ```
