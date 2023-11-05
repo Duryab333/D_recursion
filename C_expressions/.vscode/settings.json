@@ -1,5 +1,4 @@
 {
-    "code-runner.clearPreviousOutput": true,
     "python.testing.unittestArgs": [
         "-v",
         "-s",

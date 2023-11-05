@@ -61,9 +61,9 @@ class Expressions:
 
         # attempt to load solution module (ignore)
         try:
-            sol_module = (__file__.split("\\")[-1:])[0].split(".")[0] + "_sol"
-            mod = __import__(sol_module, globals(), locals(), [], 0)
-            mod.set_solution(self)  # replace empty values with solutions
+            _from, _import = 'expressions_sol', 'Stream'
+            mod = __import__(_from, fromlist=[_import])
+            mod.set_solution(self)  # invoke set_solution() to replace values with solutions
         #
         except ImportError:
             pass
