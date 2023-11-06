@@ -7,7 +7,7 @@ This assignment demonstrates Python's powerful (*"one-liner"*) expressions.
 - [Challenge 2:](#2-challenge-run-code) Run Code
 - [Challenge 3:](#3-challenge-run-unit-tests) Run Unit Tests
 - [Challenge 4:](#4-challenge-write-expressions) Write Expressions
-- [Challenge 5:](#5-challenge-final-test) Final Test
+- [Challenge 5:](#5-challenge-final-test-and-sign-off) Final Test and sign-off
 
 Points: [1, 2, 3, 0, 10]
 
@@ -262,24 +262,34 @@ Continue until all tests pass.
 
 
 &nbsp;
-### 5.) Challenge: Final Test
+### 5.) Challenge: Final Test and sign-off
 
-Pull latest Unit-test file from GitLab and re-run tests:
+For sign-off, change into `C_expressions` directory and copy commands into a terminal:
+
 ```sh
-wget https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/blob/main/C_express
-ions/test_expressions.py
+# Fetch test file from Gitlab and run tests for sign-off.
+# The sed-command removes comments from test cases.
 
-python test_expressions.py --tests=all
+test_url=https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/raw/main/C_expressions/test_expressions.py
+
+curl $test_url | \
+   sed -e 's/^#.*Test_case_/Test_case_/' | \
+   python
 ```
 
 Result:
 
 ```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7874  100  7874    0     0  55666      0 --:--:-- --:--:-- --:--:-- 56242
 ...........
 ----------------------------------------------------------------------
-Ran 11 tests in 0.002s
+Ran 11 tests in 0.003s
 
 OK
-<unittest.runner.TextTestResult run=11 errors=0 failures=0>
 ```
+
+11 tests succeeded.
+
 (10 Pts, 1 Pt for each test passing)

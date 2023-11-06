@@ -301,13 +301,31 @@ Unit testing using test objects:
 
 &nbsp;
 ### 7.) Challenge: Sign-off
-For sign-off, copy commands into a terminal:
+
+For sign-off, change into `E_streams` directory and copy commands into a terminal:
 
 ```sh
 test_url=https://gitlab.bht-berlin.de/sgraupner/ds_cs4bd_2324/-/raw/main/E_streams/test_stream.py
 
-curl $(echo $test_url) | python     # run tests from URL (use for sign-off)
+curl $test_url | python     # run tests from URL (use for sign-off)
 ```
 
-(1 Pts)
+Result:
 
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  6264  100  6264    0     0  38354      0 --:--:-- --:--:-- --:--:-- 38666
+Unit testing using test objects:
+<stdin>:153: DeprecationWarning: unittest.makeSuite() is deprecated and will be
+removed in Python 3.13. Please use unittest.TestLoader.loadTestsFromTestCase() i
+nstead.
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+```
+
+12 tests succeeded.
+
+(1 Pts)

@@ -148,29 +148,35 @@ class Stream_test(unittest.TestCase):
         self.assertEqual(16, result)
 
 
-def run_tests(test_class):
-    print('Unit testing using test objects:')
-    _suite = unittest.makeSuite(test_class, "test")
-    _runner = unittest.TextTestRunner(verbosity=0)  #, stream=sys.stdout)
-    _result = _runner.run(_suite)
-    _n = _result.testsRun
-    _succ = [m for m in dir(test_class) if m.startswith('test_')]
-    _failed = [(str(_test).split()[0], _trace.split(',')[1]) for _test, _trace in _result.failures]
-    for _f in _failed:
-        _succ.remove(_f[0])
-    #
-    for t in _succ:
-        # if t not in _failed:
-        print(f' - {t}()')
-    #
-    print(f'---> {_n - len(_failed)}/{_n} TESTS SUCCEEDED')
-    #
-    if len(_failed) > 0:
-        print(f'\n---> {len(_failed)}/{_n} TESTS FAILED {"*" * 20}')
-        for _f in _failed:  # _f[0]: _meth, _f[1]: _line
-            print(f' - FAILED: {_f[0]}(), {_f[1]}')
+    # report results,
+    # see https://stackoverflow.com/questions/28500267/python-unittest-count-tests
+    # currentResult = None
+
+    # @classmethod
+    # def setResult(cls, amount, errors, failures, skipped):
+    #     cls.amount, cls.errors, cls.failures, cls.skipped = \
+    #         amount, errors, failures, skipped
+
+    # def tearDown(self):
+    #     amount = self.currentResult.testsRun
+    #     errors = self.currentResult.errors
+    #     failures = self.currentResult.failures
+    #     skipped = self.currentResult.skipped
+    #     self.setResult(amount, errors, failures, skipped)
+
+    # @classmethod
+    # def tearDownClass(cls):
+    #     print("\ntests run: " + str(cls.amount))
+    #     print("errors: " + str(len(cls.errors)))
+    #     print("failures: " + str(len(cls.failures)))
+    #     print("success: " + str(cls.amount - len(cls.errors) - len(cls.failures)))
+    #     print("skipped: " + str(len(cls.skipped)))
+
+    # def run(self, result=None):
+    #     self.currentResult = result # remember result for use in tearDown
+    #     unittest.TestCase.run(self, result) # call superclass run method
 
 
 if __name__ == '__main__':
-    test_class = Stream_test
-    run_tests(test_class)
+    result = unittest.main()
+
