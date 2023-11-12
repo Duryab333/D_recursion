@@ -74,11 +74,11 @@ in 1972.
 
 <!--
 [video (FelixTechTips)](https://youtu.be/bZkzH5x0SKU?si=n8Z2ZIfbB73_v1TE)
-<img src="../markup/img/graph_2a.png" alt="drawing" width="640"/>
+<img src="../markup/img/graph_2a.jpg" alt="drawing" width="640"/>
 -->
 [Video (Mike Pound, Computerphile)](https://youtu.be/GazC3A4OQTE?si=ZuBEcWaBzuKmPMqA)
 
-<img src="../markup/img/graph_1.png" alt="drawing" width="640"/>
+<img src="../markup/img/graph_1.jpg" alt="drawing" width="640"/>
 
 Node `S` forms the start of the algorithm, node `E` is the destination.
 
