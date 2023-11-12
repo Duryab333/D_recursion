@@ -8,6 +8,7 @@ This repository contains the assignments for class
 - Assignment C - [Python Expressions & Unit Tests](C_expressions).
 - Assignment D - [Recursive Problem Solving](D_recursion).
 - Assignment E - [Data Streams](E_streams).
+- Assignment F - [Graph Data](F_graph_data).
 
 
 &nbsp;
