@@ -77,6 +77,7 @@ in 1972.
 <img src="../markup/img/graph_2a.png" alt="drawing" width="640"/>
 -->
 [Video (Mike Pound, Computerphile)](https://youtu.be/GazC3A4OQTE?si=ZuBEcWaBzuKmPMqA)
+
 <img src="../markup/img/graph_1.png" alt="drawing" width="640"/>
 
 Node `S` forms the start of the algorithm, node `E` is the destination.
