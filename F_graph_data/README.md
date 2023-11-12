@@ -131,7 +131,7 @@ DE(3), DF(2), EF(1), FC(3)
 Output the result:
 
 ```
-shortest path: A -> B -> X -> F -> C
+shortest path: A -> B -> D -> F -> C
 analysis:
 S->B(2)
 B->D(5)
