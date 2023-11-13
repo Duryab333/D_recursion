@@ -1,5 +1,6 @@
 from functools import cmp_to_key
 """
+Assignment_D: recursion
 """
 
 class Recursion:
@@ -20,7 +21,7 @@ class Recursion:
         return 0
 
 
-    def fib(self, _n, memo={}) -> int:
+    def fib(self, _n, memo=None) -> int:
         """
         Return value of n-th Fibonacci number.
         - input: n=8
@@ -196,7 +197,7 @@ if __name__ == '__main__':
     if 52 in run_choices:
         n = 12
         pairs = n1.find_pairs(n, lst)
-        print(f'find_sum({n}, list) -> {pairs}')
+        print(f'find_pairs({n}, list) -> {pairs}')
 
 
     lst = [8, 10, 2, 14, 4]     # input list
