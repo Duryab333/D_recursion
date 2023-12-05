@@ -9,7 +9,7 @@ This repository contains the assignments for class
 - Assignment D - [Recursive Problem Solving](D_recursion).
 - Assignment E - [Data Streams](E_streams).
 - Assignment F - [Graph Data](F_graph_data).
-
+- Assignment G - [Docker](G_docker).
 
 &nbsp;
 
