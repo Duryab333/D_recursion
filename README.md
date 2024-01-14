@@ -28,7 +28,7 @@ This repository contains the assignments for class
 
 - Assignment H - [Apache Spark](H_Spark).
 
-- Assignment H1 - [Shakespeare](H1_Shakespeare) with Apache Spark.
+- Assignment H1 - [Shakespeare](H_Spark/H1_Shakespeare.md) with Apache Spark.
 
 
 &nbsp;
