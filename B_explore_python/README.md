@@ -68,7 +68,7 @@ Perform examples and answer questions on a piece of paper.
     >>> fruitbox = ('apple', 'pear', 'orange', 'banana', 'apple')
 
     >>> print(fruits)
-    ['apple', 'pear', 'orange', 'banana']
+    ['apple', 'pear', 'orange', 'banana', 'apple']
 
     >>> print(fruitbox)
     ('apple', 'pear', 'orange', 'banana', 'apple')
@@ -85,15 +85,24 @@ Perform examples and answer questions on a piece of paper.
     >>>
     ```
 
-
-1. How is the structure for Eric called? (1 Pt)
+1. How is the structure for `eric1` called? What is the difference to
+    `eric2`? Explain outputs. (1 Pt)
 
     ```py
-    eric = {"name": "Eric", "salary": 5000, "birthday": "Sep 25 2001"}
+    eric1 = {"name": "Eric", "salary": 5000, "birthday": "Sep 25 2001"}
 
-    >>> print(eric)
+    eric2 = {"name", "Eric", "salary", 5000, "birthday", "Sep 25 2001"}
+
+    >>> print(eric1)
     {'name': 'Eric', 'salary': 5000, 'birthday': 'Sep 25 2001'}
-    >>> print(eric["salary"])
+
+    >>> print(eric2)
+    {'Sep 25 2001', 5000, 'name', 'Eric', 'birthday', 'salary'}
+    # 
+    # print(eric2) in same order?
+
+    # print salary for eric1 and eric2?
+    >>> print(eric1["salary"])
     5000
     ```
 
