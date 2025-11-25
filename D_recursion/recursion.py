@@ -9,6 +9,11 @@ class Recursion:
 
 
     def sum(self, _numbers) -> int:
+        if not _numbers:
+            return 0
+        n1 = _numbers[0]
+        r = _numbers[1:]
+        return n1 + self.sum(r)
         """
         Return sum of numbers using recursion.
         Follow steps:
@@ -18,17 +23,25 @@ class Recursion:
             4. Combine the result for the sub-problem with the first number `n1`: `return n1 + sum(r)`.
         """
         # your code
-        return 0
+        
 
 
     def fib(self, _n, memo=None) -> int:
+        
         """
         Return value of n-th Fibonacci number.
         - input: n=8
         - output: 21
         """
-        # your code
-        return 0
+        if memo is None:
+            memo = {0: 0, 1: 1}      # base memo
+
+        if _n in memo:
+            return memo[_n]
+
+        memo[_n] = self.fib(_n - 1, memo) + self.fib(_n - 2, memo)
+        return memo[_n]
+
 
 
     def fib_gen(self, _n):
@@ -40,8 +53,10 @@ class Recursion:
             ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
              [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987])
         """
-        # your code
-        yield ([], [])
+        nums = list(range(_n + 1))
+        fibs = [self.fib(i) for i in nums]
+        yield (nums, fibs)
+
 
 
     def perm(self, _numbers) -> list:
@@ -50,8 +65,26 @@ class Recursion:
         - input: [1, 2, 3]
         - output: [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
         """
-        # your code
-        return []
+        if len(_numbers) == 0:
+            return [[]]
+        if len(_numbers) == 1:
+            return [_numbers[:]]
+        if len(_numbers) == 2:
+            a, b = _numbers
+            return [[a, b], [b, a]]
+
+        n1 = _numbers[0]
+        r = _numbers[1:]
+
+        sub_perms = self.perm(r)
+        result = []
+        # insert n1 into all positions of each permutation
+        for p in sub_perms:
+            for i in range(len(p) + 1):
+                result.append(p[:i] + [n1] + p[i:])
+
+        return result
+
 
 
     def pset(self, _numbers) -> list:
@@ -60,24 +93,45 @@ class Recursion:
         - input: [1, 2, 3]
         - output: powerset, [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
         """
-        # your code
-        return []
+        if len(_numbers) == 0:
+            return [[]]
+
+        n1 = _numbers[0]
+        r = _numbers[1:]
+
+        subsets_without = self.pset(r)
+        subsets_with = [[n1] + s for s in subsets_without]
+
+        return subsets_without + subsets_with
+
+
 
 
     def find(self, _numbers, match_func) -> list:
         """
         Return list of elements n for which match_func(n) evaluates True.
         """
-        # your code
-        return []
+        if not _numbers:
+            return []
+        head = _numbers[0]
+        tail = _numbers[1:]
+        rest = self.find(tail, match_func)
+        return ([head] + rest) if match_func(head) else rest
 
 
     def find_adjacent(self, pair, _numbers, _i=0) -> list:
         """
         Return list of indexes of adjacent numbers in _numbers.
         """
-        # your code
-        return []
+        if _i >= len(_numbers) - 1:
+            return []
+
+        rest = self.find_adjacent(pair, _numbers, _i + 1)
+
+        if _numbers[_i] == pair[0] and _numbers[_i + 1] == pair[1]:
+            return [_i] + rest
+
+        return rest
 
 
     def find_pairs(self, n, _numbers) -> list:
@@ -85,8 +139,27 @@ class Recursion:
         Return list of pairs from _numbers that add to n,
         any pair, any order, no duplicates.
         """
-        # your code
-        return []
+        seen = set()
+        used = set()
+        res = []
+
+        def helper(i):
+            if i == len(_numbers):
+                return
+
+            x = _numbers[i]
+            c = n - x
+            if c in seen:
+                pair = tuple(sorted((x, c)))
+                if pair not in used:
+                    used.add(pair)
+                    res.append([pair[0], pair[1]])
+
+            seen.add(x)
+            helper(i + 1)
+
+        helper(0)
+        return res
 
 
     def find_all_sums(self, n, _numbers) -> list:
@@ -94,8 +167,27 @@ class Recursion:
         Return all combinations of numbers in _numbers that add to n,
         (any pair, any order, no duplicates).
         """
-        # your code
-        return []
+        nums = sorted(_numbers)
+        res = []
+
+        def backtrack(start, current, total):
+            if total == n:
+                res.append(current[:])
+                return
+            if total > n:
+                return
+
+            for i in range(start, len(nums)):
+                val = nums[i]
+                if total + val > n:
+                    continue
+
+                current.append(val)
+                backtrack(i + 1, current, total + val)
+                current.pop()
+
+        backtrack(0, [], 0)
+        return res
 
 
     def __init__(self, _numbers=numbers):
@@ -107,16 +199,16 @@ class Recursion:
     run_choices = [
         1,      # Challenge 1, Simple recursion: sum numbers
         2,      # Challenge 2, Fibonacci numbers
-        # 21,     # Challenge 2.1, fig_gen()
-        # 22,     # Challenge 2.2, memoization, fib(60), fib(90)
-        # 3,      # Challenge 3, Permutation
-        # 4,      # Challenge 4, Powerset
-        # 5,      # Challenge 5, Finding matches, find()
-        # 51,     # Challenge 5.1, find_adjacent() pairs
-        # 52,     # Challenge 5.2, find_pairs() that add to n
-        # 6,      # Challenge 6, Find all combinations that add to n
-        # 61,     # Challenge 6.1, Find all in medium set
-        # 7       # Challenge 7, Hard problem finding numbers (extra points)
+        21,     # Challenge 2.1, fig_gen()
+        22,     # Challenge 2.2, memoization, fib(60), fib(90)
+        3,      # Challenge 3, Permutation
+        4,      # Challenge 4, Powerset
+        5,      # Challenge 5, Finding matches, find()
+        51,     # Challenge 5.1, find_adjacent() pairs
+        52,     # Challenge 5.2, find_pairs() that add to n
+        6,      # Challenge 6, Find all combinations that add to n
+        61,     # Challenge 6.1, Find all in medium set
+        7       # Challenge 7, Hard problem finding numbers (extra points)
     ]
 
 
@@ -130,7 +222,7 @@ except ImportError:
     pass
 
 
-if __name__ == '__main__':
+def main():
     """
     Main driver that runs when this file is executed by Python interpreter.
     """
@@ -259,3 +351,4 @@ if __name__ == '__main__':
 # #
 # n = 899 # 720 + 179, [[720, 179], [260, 179, 157, 303], [167, 289, 153, 290], [289, 153, 457]]
 # n = 6240
+
